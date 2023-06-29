@@ -30,5 +30,5 @@ const campusReducer = (state = INITIAL_STATE, action) => {
   }
 };
 
-// Export the studentReducer as the default export
-export default studentReducer;
+// Export the campusReducer as the default export
+export default campusReducer;
