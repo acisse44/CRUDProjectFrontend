@@ -3,7 +3,7 @@ import Home from "../Pages/Home";
 import Students from "../Pages/Students";
 import "../App/App.css"
 import Campuses from "../Pages/Campuses";
-
+import Student from "../Pages/Student"
 function App() {
   return (
     <Router>
@@ -28,6 +28,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/campuses/*" element={<Campuses />} />
           <Route path="/students/*" element={<Students />} />
+          <Route path="/students/:id" element={<Student />} />
+
         </Routes>
       </div>
     </Router>

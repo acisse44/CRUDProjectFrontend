@@ -63,13 +63,13 @@ export const fetchAllStudentsThunk = () => {
 export const fetchSingleStudent = (payload) => {
     console.log("Fetch a single student action");
     return {
-        type: StudentActionType.fetchSingleStudent,
+        type: StudentActionType.FETCH_SINGLE_STUDENT,
         payload: payload,
     };
 };
 
 // Thunk function to asynchronously fetch a single student and dispatch the action
-export const fetchSingleStudentThunk = () => {
+export const fetchSingleStudentThunk = (studentId) => {
     return async (dispatch) => {
         try {
             console.log("fetchSingleStudentThunk is firing");
