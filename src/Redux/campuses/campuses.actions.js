@@ -44,10 +44,10 @@ export const fetchSingleCampusThunk = () => {
         try {
             console.log("fetchSingleCampusThunk is firing");
             // Make an asynchronous request to fetch a single campus from the server
-            const response = await axios.get(`http://localhost:8080/api/campuses/${campudId}`);
+            const response = await axios.get(`http://localhost:8080/api/campuses/${campusId}`);
             console.log("fetchSingleCampusThunk completed");
             // Dispatch the fetchSingleCampus action with the response data
-            dispatch(fetchCampus(response.data));
+            dispatch(fetchSingleCampus(response.data));
         } catch (error) {
             console.error(error);
         }

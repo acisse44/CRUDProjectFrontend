@@ -1,7 +1,7 @@
 import axios from "axios";
 import StudentActionType from "./students.types";
 
-export const addStudent = () => {
+export const addStudent = (studentData) => {
     console.log("Add student action");
     return {
       type: StudentActionType.ADD_STUDENT,
