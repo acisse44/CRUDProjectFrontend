@@ -5,7 +5,6 @@ import StudentsList from "../Components/StudentsList"
 
  function Students() {
   const allStudents = useSelector((state) => state.students.allStudents)
-  console.log(allStudents);
   const dispatch = useDispatch()
   const fetchAllStudents = () => {
     return dispatch(fetchAllStudentsThunk());
