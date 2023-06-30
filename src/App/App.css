@@ -35,3 +35,18 @@
   width: 150px;
   height: 100px;
 }
+
+#campus {
+  border-style: solid;
+  width: 30%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+#campusImage {
+  margin-top: 10px;
+  width: 150px;
+  height: 100px;
+}

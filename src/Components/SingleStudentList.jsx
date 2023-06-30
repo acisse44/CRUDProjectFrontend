@@ -2,11 +2,19 @@ import React from "react";
 
 function SingleStudentList(props) {
   const { student } = props;
-  console.log("Student PROPS", student);
+  if (!student) {
+    return (
+        <div>
+          <div>Empty</div>
+          <div>No student</div>
+        </div>
+    );
+  }
+
   return (  
     <div>
-      <div key={student.id}>
-        <img src={student.imageUrl} alt={student.firstName} style={{ width: "200px", height: "200px" }}/>
+      <div key={student.id} id="student">
+        <img src={student.imageUrl} alt={student.firstName} id="studentImage"/>
         <div>{student.firstName} {student.lastName}</div>
         <div>{student.email}</div>
       </div>

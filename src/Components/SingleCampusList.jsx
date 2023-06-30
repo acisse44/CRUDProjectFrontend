@@ -2,18 +2,26 @@ import React from "react";
 
 function SingleCampusList(props) {
   const { campus } = props;
-  console.log("Student PROPS", campus);
+  if (!campus) {
+    return (
+        <div>
+          <div>Empty</div>
+          <div>No campus</div>
+        </div>
+    );
+  }
+
   return (  
     <div>
-      <div key={campus.id}>
-        <img src={campus.imageUrl} alt={campus.Name}/>
+      <div key={campus.id} id="campus">
+        <img src={campus.imageUrl} alt={campus.Name} id="campusImage"/>
         <div>{campus.Name}</div>
+        <div>{campus.address}</div>
         <div>{campus.email}</div>
         <div>{campus.description}</div>
-
-        <h1>I added stuff here</h1>
-
       </div>
     </div>
   );
 }
+
+export default SingleCampusList;
