@@ -2,7 +2,7 @@ import React from "react";
 
 function SingleCampusList(props) {
   const { campus } = props;
-  if (!campus) {
+  if (!Object.keys(campus).length) {
     return (
         <div>
           <div>Empty</div>
