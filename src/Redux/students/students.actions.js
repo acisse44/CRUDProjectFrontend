@@ -16,7 +16,11 @@ export const fetchAllStudentsThunk = () => {
         try {
             console.log("fetchAllStudentsThunk is firing");
             // Make an asynchronous request to fetch all students from the server
-            const response = await axios.get("http://localhost:8080/api/students");
+            const response = await axios.get("http://localhost:8080/api/students", {
+                headers: {
+                "Access-Control-Allow-Origin": "http://localhost:3000",
+                },
+            });
             console.log("fetchAllStudentsThunk completed");
             // Dispatch the fetchAllStudents action with the response data
             dispatch(fetchAllStudents(response.data));
