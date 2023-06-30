@@ -24,7 +24,7 @@ const campusReducer = (state = INITIAL_STATE, action) => {
 
     case CampusActionType.ADD_CAMPUS:
       // Add the new campus to the allCampuses array in state
-      return { ...state, allCampuses: [...state.allCampuses, payload] };
+      return { ...state };
 
     case CampusActionType.DELETE_CAMPUS:
       // Filter out the deleted campus from the allCampuses array in state
