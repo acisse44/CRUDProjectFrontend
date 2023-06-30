@@ -20,7 +20,7 @@ const campusReducer = (state = INITIAL_STATE, action) => {
     case CampusActionType.FETCH_ALL_CAMPUSES:
       // Return a new state object with the payload merged into it
       // The payload should contain the fetched students data
-      return { ...state, payload };
+      return { ...state, allCampuses: payload };
 
     // Default case for handling unknown action types
     default:
