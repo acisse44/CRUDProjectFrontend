@@ -3,7 +3,7 @@ import CampusActionType from "./campuses.types";
 
 // Initial state object for students
 export const INITIAL_STATE = {
-  campuses: [],
+  allCampuses: [],
 };
 
 // Reducer function for managing the state related to students
