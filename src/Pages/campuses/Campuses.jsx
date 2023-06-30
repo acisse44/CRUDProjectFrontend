@@ -17,8 +17,8 @@ import CampusesList from '../../Components/CampusesList';
 
   return (
     <div>
-      <h1>All Campuses</h1> 
-      <button>Add Campuses</button>
+      <h1 id = "campusHeading"> All Campuses</h1> 
+      <button>Add Campus</button>
         <div id="campusesList">
           <CampusesList list={allCampuses} />
         </div>

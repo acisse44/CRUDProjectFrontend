@@ -16,7 +16,7 @@ import StudentsList from "../../Components/StudentsList"
 
   return (
     <div>
-      <h1>All students</h1> 
+      <h1 id = "studentHeading"> All Students</h1> 
       <button>Add Student</button>
         <div id="studentsList">
           <StudentsList list={allStudents} />
