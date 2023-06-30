@@ -16,14 +16,46 @@ export const fetchAllStudentsThunk = () => {
         try {
             console.log("fetchAllStudentsThunk is firing");
             // Make an asynchronous request to fetch all students from the server
-            const response = await axios.get("http://localhost:8080/api/students", {
-                headers: {
-                "Access-Control-Allow-Origin": "http://localhost:3000",
-                },
-            });
+            const response = await axios.get("http://localhost:8080/api/students");
+            // , {
+            //     headers: {
+            //     "Access-Control-Allow-Origin": "http://localhost:3000",
+            //     },
+            // });
             console.log("fetchAllStudentsThunk completed");
             // Dispatch the fetchAllStudents action with the response data
             dispatch(fetchAllStudents(response.data));
+        } catch (error) {
+            console.error(error);
+        }
+    };
+};
+
+
+// Action creator function to fetch a single student
+export const fetchSingleStudent = (payload) => {
+    console.log("Fetch a single student action");
+    return {
+        type: StudentActionType.fetchSingleStudent,
+        payload: payload,
+    };
+};
+
+// Thunk function to asynchronously fetch a single student and dispatch the action
+export const fetchSingleStudentThunk = () => {
+    return async (dispatch) => {
+        try {
+            console.log("fetchSingleStudentThunk is firing");
+            // Make an asynchronous request to fetch a single student from the server
+            const response = await axios.get(`http://localhost:8080/api/students/${studentId}`); 
+            //     , {
+            //     headers: {
+            //     "Access-Control-Allow-Origin": "http://localhost:3000",
+            //     },
+            // });
+            console.log("fetchSingleStudentThunk completed");
+            // Dispatch the fetchSingleStudent action with the response data
+            dispatch(fetchSingleStudent(response.data));
         } catch (error) {
             console.error(error);
         }
