@@ -3,7 +3,7 @@ import StudentActionType from "./students.types";
 
 // Initial state object for students
 export const INITIAL_STATE = {
-  students: [],
+  allStudents: [],
 };
 
 // Reducer function for managing the state related to students
@@ -20,7 +20,7 @@ const studentReducer = (state = INITIAL_STATE, action) => {
     case StudentActionType.FETCH_ALL_STUDENTS:
       // Return a new state object with the payload merged into it
       // The payload should contain the fetched students data
-      return { ...state, payload };
+      return { ...state, allStudents: payload };
 
     // Default case for handling unknown action types
     default:

@@ -13,7 +13,7 @@ export const fetchAllStudentsThunk = () => {
     return async (dispatch) => {
         try {
                 console.log("fetchAllStudentsThunk is firing");
-                const resposne = await axios.get("http://localhost:8080/api/students");
+                const resposne = await axios.get("https://pokeapi.co/api/v2/pokemon");
                 console.log("fetchAllStudentsThunk completed");
                 dispatch(fetchAllStudents(resposne.data));
         } catch (error) {
