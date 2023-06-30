@@ -1,3 +1,6 @@
+## <p align="center">[Design Paper](https://tinyurl.com/2bzexf57)</p>
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -2,7 +2,7 @@ import React from "react";
 
 function SingleStudentList(props) {
   const { student } = props;
-  if (!student) {
+  if (!Object.keys(student).length) {
     return (
         <div>
           <div>Empty</div>
