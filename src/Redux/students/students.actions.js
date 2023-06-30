@@ -1,6 +1,33 @@
 import axios from "axios";
 import StudentActionType from "./students.types";
 
+export const addStudent = (studentData) => {
+    console.log("Add student action");
+    return {
+      type: StudentActionType.ADD_STUDENT,
+      payload: studentData,
+    };
+};
+
+// Thunk function to asynchronously add a single student and dispatch the action
+export const addStudentThunk = (studentData) => {
+    return async (dispatch) => {
+        try {
+            console.log("addStudentThunk is firing");
+            // Make an asynchronous request to add a student to the server
+            const response = await axios.post(
+                "http://localhost:8080/api/students",
+                studentData
+            );
+            console.log("addStudentThunk completed");
+            // Dispatch the addStudent action with the response data
+            dispatch(addStudent(response.data));
+        } catch (error) {
+            console.error(error);
+      }
+    };
+};
+
 // Action creator function to fetch all students
 export const fetchAllStudents = (payload) => {
     console.log("Fetch all students action");
