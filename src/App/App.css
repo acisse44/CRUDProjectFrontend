@@ -22,31 +22,185 @@
 }
 
 #student {
-  border-style: solid;
-  width: 30%;
+  border: 3px solid;
+  width: 98%;
+  height: 300px;
   margin-top: 10px;
   margin-bottom: 10px;
-  display: inline-block;
+  display: flex;
+  align-items: center; 
   margin-left: 10px;
+  box-sizing: border-box;
+  padding: 10px; 
 }
 
 #studentImage {
-  margin-top: 10px;
-  width: 150px;
-  height: 100px;
+  margin-right: 10px; 
+  width: 200px;
+  height: 200px;
 }
 
 #campus {
-  border-style: solid;
-  width: 30%;
+  border: 3px solid;
+  width: 98%;
+  height: 300px;
   margin-top: 10px;
   margin-bottom: 10px;
-  display: inline-block;
+  display: flex; 
+  align-items: center; 
   margin-left: 10px;
+  box-sizing: border-box;
+  padding: 10px;
 }
 
 #campusImage {
+  margin-right: 10px;
+  width: 200px;
+  height: 200px;
+}
+
+.single-campus-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.students-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.campus-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.single-student-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#singleStudent {
+  border: 3px solid;
+  width: 100%;
+  height: 300px;
   margin-top: 10px;
-  width: 150px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+#singleStudentImage {
+  margin-right: 10px;
+  width: 200px;
+  height: 200px;
+  margin-left: 0;
+}
+
+.studentCampus {
+  border: 3px solid;
+  width: 60%;
+  height: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+#studentCampusImage {
+  margin-right: 10px;
+  width: 100px;
   height: 100px;
+}
+
+#student div {
+  font-size: 15px;
+  white-space: pre-line;
+}
+
+#campus div {
+  font-size: 15px;
+  white-space: pre-line;
+
+}
+
+.single-campus-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.campus {
+  border: 3px solid;
+  width: 100%;
+  height: 300px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.campus-image {
+  margin-right: 10px;
+  width: 200px;
+  height: 200px;
+}
+
+.campus-description {
+  margin-bottom: 10px;
+}
+
+.campus-address {
+  margin-bottom: 10px;
+}
+
+.students-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.student {
+  border: 3px solid;
+  width: 100%;
+  height: 150px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.student-image {
+  margin-right: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+.student-name {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.student-email {
+  font-size: 12px;
 }
