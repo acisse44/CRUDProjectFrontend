@@ -63,16 +63,41 @@ export const fetchAllCampuses = (payload) => {
     };
 };
 
-// Thunk function to asynchronously fetch all students and dispatch the action
+// Thunk function to asynchronously fetch all campus and dispatch the action
 export const fetchAllCampusesThunk = () => {
     return async (dispatch) => {
         try {
-            console.log("fetchAllCampusessThunk is firing");
+            console.log("fetchAllCampusesThunk is firing");
             // Make an asynchronous request to fetch all campuses from the server
             const response = await axios.get("http://localhost:8080/api/campuses");
             console.log("fetchAllCampusesThunk completed");
             // Dispatch the fetchAllCampuses action with the response data
             dispatch(fetchAllCampuses(response.data));
+        } catch (error) {
+            console.error(error);
+        }
+    };
+};
+
+// Action creator function to delete a campus
+export const deleteACampus = (payload) => {
+    console.log("Delete a campus action");
+    return {
+        type: CampusActionType.DELETE_CAMPUS,
+        payload: payload,
+    };
+};
+
+// Thunk function to asynchronously delete a campus and dispatch the action
+export const deleteACampusThunk = (campusId) => {
+    return async (dispatch) => {
+        try {
+            console.log("deleteACampusThunk is firing");
+            // Make an asynchronous request to delete a campuses from the server
+            const response = await axios.delete(`http://localhost:8080/api/campuses/${campusId}`);
+            console.log("deleteACampusThunk completed");
+            // Dispatch the deleteACampus action with the response data
+            dispatch(deleteACampus(response.data));
         } catch (error) {
             console.error(error);
         }
