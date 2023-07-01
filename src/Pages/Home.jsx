@@ -1,13 +1,11 @@
 import React from 'react'
 
- function Home() {
+function Home() {
   return (
     <div>
-      <h1>
-        Welcome to Home 
-      </h1> 
+      <h1 className="homeHeading">Welcome to Campus & Student Finder </h1>
     </div>
-  )
+  );
 }
 
 
