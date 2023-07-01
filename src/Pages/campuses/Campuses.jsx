@@ -20,7 +20,7 @@ import CampusesList from '../../Components/CampusesList';
       <h1>All Campuses</h1> 
       <button>Add Campuses</button>
         <div id="campusesList">
-          <CampusesList list={allCampuses} />
+          <CampusesList allCampuses={allCampuses} />
         </div>
     </div>
   )

@@ -19,7 +19,7 @@ import StudentsList from "../../Components/StudentsList"
       <h1>All students</h1> 
       <button>Add Student</button>
         <div id="studentsList">
-          <StudentsList list={allStudents} />
+          <StudentsList allStudents={allStudents} />
         </div>
     </div>
   )

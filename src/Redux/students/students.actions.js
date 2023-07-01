@@ -88,3 +88,28 @@ export const fetchSingleStudentThunk = (studentId) => {
         }
     };
 };
+
+// Action creator function to delete a student
+export const deleteAStudent = (payload) => {
+    console.log("Delete a student action");
+    return {
+        type: StudentActionType.DELETE_STUDENT,
+        payload: payload,
+    };
+};
+
+// Thunk function to asynchronously delete a campus and dispatch the action
+export const deleteAStudentThunk = (studentId) => {
+    return async (dispatch) => {
+        try {
+            console.log("deleteAStudentThunk is firing");
+            // Make an asynchronous request to delete a campuses from the server
+            const response = await axios.delete(`http://localhost:8080/api/students/${studentId}`);
+            console.log("deleteAStudentThunk completed");
+            // Dispatch the deleteAStudent action with the response data
+            dispatch(deleteAStudent(response.data));
+        } catch (error) {
+            console.error(error);
+        }
+    };
+};
