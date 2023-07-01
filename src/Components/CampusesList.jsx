@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import {  deleteACampusThunk }  from "../Redux/campuses/campuses.actions"
-import "../App/App.css";
+import "../App/App.css"
 
 function CampusesList(props) {
   const { allCampuses } = props;
@@ -18,13 +18,14 @@ function CampusesList(props) {
           <div>No campuses</div>
         </div>
       ) : (
-        <div>
+        <div id="campus-container"> 
           {allCampuses.map((allCampuses) => (
             <div key={allCampuses.id} id="campus">
               <img src={allCampuses.imageUrl} alt={allCampuses.Name} id="campusImage" />
-              <div>{allCampuses.description}</div>
-              <div>{allCampuses.address}</div>
-              <button onClick={() => handleDelete(allCampuses.id)}>Delete</button>
+              <h1 id="campus-name">{allCampuses.description}</h1>
+              <p id="campus-students">{allCampuses.id} students</p>
+              <button class="button-edit">Edit</button>
+              <button class="button-delete" onClick={() => handleDelete(allCampuses.id)}>Delete</button>
             </div>
           ))}
         </div>
