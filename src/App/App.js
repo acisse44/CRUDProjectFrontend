@@ -14,13 +14,13 @@ function App() {
         <nav className="nav-container">
           <ul className="nav-links">
             <li className="nav-item-left">
-              <Link to="/">Home</Link>
+            <Link to="/" id="home-link">Home</Link>
             </li>
             <li className="nav-item-right">
-              <Link to="/campuses">Campuses</Link>
+            <Link to="/campuses" id="campuses-link">Campuses</Link>
             </li>
             <li className="nav-item-right">
-              <Link to="/students">Students</Link>
+            <Link to="/students" id="students-link">Students</Link>
             </li>
           </ul>
         </nav>
