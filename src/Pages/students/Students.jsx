@@ -1,29 +1,40 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux"
-import {  fetchAllStudentsThunk }  from "../../Redux/students/students.actions"
+import { useNavigate } from 'react-router-dom';
+import {  fetchAllStudentsThunk, deleteAStudentThunk }  from "../../Redux/students/students.actions"
 import StudentsList from "../../Components/StudentsList"
 
  function Students() {
   const allStudents = useSelector((state) => state.students.allStudents)
+  const allCampuses = useSelector((state) => state.campuses.allCampuses);
   const dispatch = useDispatch()
+  const navigate = useNavigate();
+
   const fetchAllStudents = () => {
     return dispatch(fetchAllStudentsThunk());
   }
 
+  const handleDelete = (id) => {
+    dispatch(deleteAStudentThunk(id));
+  };
+
+  const handleAddStudent = () => {
+    navigate('/students/add');
+  };
+
   useEffect(() => {
-    fetchAllStudents()
+    fetchAllStudents();
   }, [])
 
   return (
     <div>
       <h1 id = "studentHeading"> All Students</h1> 
-      <button>Add Student</button>
+      <button className="button-add" onClick={handleAddStudent}>Add Student</button>
         <div id="studentsList">
-          <StudentsList allStudents={allStudents} />
+          <StudentsList allStudents={allStudents} allCampuses={allCampuses} handleDelete={handleDelete}/>
         </div>
     </div>
   )
 }
-
 
 export default Students;
