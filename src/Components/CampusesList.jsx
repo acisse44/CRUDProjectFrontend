@@ -1,31 +1,27 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import {  deleteACampusThunk }  from "../Redux/campuses/campuses.actions"
-import "../App/App.css"
+import React from 'react';
+import '../App/App.css';
 
 function CampusesList(props) {
-  const { allCampuses } = props;
-  const dispatch = useDispatch();
-  const handleDelete = (id) => {
-    dispatch(deleteACampusThunk(id));
-  }
+  const { allCampuses, handleDelete } = props;
 
   return (
     <div>
-      {allCampuses.length === 0 ? (
+      {!allCampuses || allCampuses.length === 0 ? (
         <div>
           <div>Empty</div>
           <div>No campuses</div>
         </div>
       ) : (
-        <div id="campus-container"> 
-          {allCampuses.map((allCampuses) => (
-            <div key={allCampuses.id} id="campus">
-              <img src={allCampuses.imageUrl} alt={allCampuses.Name} id="campusImage" />
-              <h1 id="campus-name">{allCampuses.description}</h1>
-              <p id="campus-students">{allCampuses.id} students</p>
-              <button class="button-edit">Edit</button>
-              <button class="button-delete" onClick={() => handleDelete(allCampuses.id)}>Delete</button>
+        <div id="campus-container">
+          {allCampuses.map((campus) => (
+            <div key={campus.id} id="campus">
+              {campus.imageUrl && <img src={campus.imageUrl} alt={campus.name} id="campusImage" />}
+              <h1 id="campus-name">{campus.description}</h1>
+              <p id="campus-students">{campus.id} students</p>
+              <button className="button-edit">Edit</button>
+              <button className="button-delete" onClick={() => handleDelete(campus.id)}>
+                Delete
+              </button>
             </div>
           ))}
         </div>
