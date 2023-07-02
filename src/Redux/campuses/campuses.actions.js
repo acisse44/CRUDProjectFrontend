@@ -23,6 +23,7 @@ export const addCampusThunk = (campusData) => {
             console.log("addCampusThunk completed");
             // Dispatch the addCampus action with the response data
             dispatch(addCampus(response.data));
+            dispatch(fetchAllCampusesThunk());
         } catch (error) {
             console.error(error);
       }
@@ -98,6 +99,7 @@ export const deleteACampusThunk = (campusId) => {
             console.log("deleteACampusThunk completed");
             // Dispatch the deleteACampus action with the response data
             dispatch(deleteACampus(response.data));
+            dispatch(fetchAllCampusesThunk());
         } catch (error) {
             console.error(error);
         }
