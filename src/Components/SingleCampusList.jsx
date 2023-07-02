@@ -4,11 +4,11 @@ function SingleCampusList(props) {
   const { campus } = props;
   const students = campus.students;
   console.log("CAMPUS:", campus);
-  console.log("STUDENT:", students);
+  console.log("STUDENT:", students.length);
 
   return (
     <div className="single-campus-container">
-      {!campus ? (
+      {Object.keys(campus).length === 0 ? (
         <div>
           <div>Empty</div>
           <div>No campus</div>
