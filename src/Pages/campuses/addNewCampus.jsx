@@ -1,4 +1,4 @@
-import React, {useState} from React;
+/*import React, { useEffect } from 'react'
 
 function addNewStudent() {
     const [campusName, setCampusName] = useState("");
@@ -36,4 +36,4 @@ function addNewStudent() {
     );
 }
 
-export default addNewCampus;
+export default addNewCampus;*/

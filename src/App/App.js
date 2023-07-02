@@ -5,6 +5,8 @@ import Campuses from "../Pages/campuses/Campuses";
 import Students from "../Pages/students/Students";
 import Campus from "../Pages/campuses/Campus";
 import Student from "../Pages/students/Student";
+//import addNewCampus from "../Pages/campuses/addNewCampus"
+//import addNewStudent from "../Pages/students/addNewStudent"
 
 function App() {
   return (
@@ -32,6 +34,9 @@ function App() {
           <Route path="/campuses/:id" element={<Campus />} />
           <Route path="/students/*" element={<Students />} />
           <Route path="/students/:id" element={<Student />} />
+         {//<Route path="/campuses/add" element={<addNewCampus/>} />
+          //<Route path="/students/add" element={<addNewStudent />} />
+        }
 
         </Routes>
       </div>

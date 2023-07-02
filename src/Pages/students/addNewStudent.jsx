@@ -1,4 +1,4 @@
-import React, {useState} from React;
+/*import React, { useEffect } from 'react'
 
 function addNewStudent() {
     const [firstName, setFirstName] = useState("");
@@ -40,4 +40,4 @@ function addNewStudent() {
     );
 }
 
-export default addNewStudent;
+export default addNewStudent;*/
