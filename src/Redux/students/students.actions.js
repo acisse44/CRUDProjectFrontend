@@ -22,6 +22,7 @@ export const addStudentThunk = (studentData) => {
             console.log("addStudentThunk completed");
             // Dispatch the addStudent action with the response data
             dispatch(addStudent(response.data));
+            dispatch(fetchAllStudentsThunk());
         } catch (error) {
             console.error(error);
       }
@@ -108,6 +109,7 @@ export const deleteAStudentThunk = (studentId) => {
             console.log("deleteAStudentThunk completed");
             // Dispatch the deleteAStudent action with the response data
             dispatch(deleteAStudent(response.data));
+            dispatch(fetchAllStudentsThunk());
         } catch (error) {
             console.error(error);
         }
