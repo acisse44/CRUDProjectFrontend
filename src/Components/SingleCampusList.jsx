@@ -8,7 +8,7 @@ function SingleCampusList(props) {
 
   return (
     <div className="single-campus-container">
-      {!campus ? (
+      {Object.keys(campus).length === 0 ? (
         <div>
           <div>Empty</div>
           <div>No campus</div>
