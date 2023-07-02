@@ -1,47 +1,41 @@
 .App {
   text-align: center;
-  background-image: url("https://www.usnews.com/cmsmedia/a1/7c/61548aea4db9ab9045673bb5187f/160919-studentscollege-stock.jpg");
-  background-size: 1000px;
 }
 
 .homeHeading {
   color: rgb(0, 0, 0);
+  background-image: url("https://www.usnews.com/cmsmedia/a1/7c/61548aea4db9ab9045673bb5187f/160919-studentscollege-stock.jpg");
   font-family: 'Times New Roman', Times, serif;
-  padding: 10px;
+  padding: 100px;
   border-radius: 5px;
   font-weight: bold;
-  font-size: 35px;
-
+  font-size: 75px;
+  color: black;
+  font-weight: bolder;
+  text-align: center;
+  background-size: 2000px;
 }
 
 #students-link{
   color: black ;
   font-family: 'Times New Roman', Times, serif;
-
   font-size: larger;
+  font-weight: bolder;
 }
 #campuses-link{
   color: black ;
   font-family: 'Times New Roman', Times, serif;
   font-size: larger;
+  font-weight: bolder;
 
 }
 #home-link{
   color: black;
   font-family: 'Times New Roman', Times, serif;
   font-size: larger;
+  font-weight: bolder;
 }
 
-#studentHeading{
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 40px;
-}
-
-#campusHeading{
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 40px;
-
-}
 .nav-container {
   padding: 0 20px;
 }
