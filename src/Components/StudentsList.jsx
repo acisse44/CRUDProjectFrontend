@@ -23,13 +23,8 @@ function Students(props) {
           {allStudents.map((student) => (
             <div key={student.id} id="student">
               <img src={student.imageUrl} alt={student.firstName} id="studentImage" />
-              <div id="student-name">{student.firstName} {student.lastName}</div>
-              <div id="student-email">{student.email}</div>
-              <div id="student-campus">{getCampusName(student.campusId)}</div>
-              <button className="button-edit">Edit</button>
-              <button className="button-delete" onClick={() => handleDelete(student.id)}>
-                Delete
-              </button>
+              <h1 id="student-name">{student.firstName} {student.lastName}</h1>
+              <h1 id="student-campus">{getCampusName(student.campusId)}</h1>
             </div>
           ))}
         </div>
