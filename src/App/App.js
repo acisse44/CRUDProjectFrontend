@@ -30,8 +30,6 @@ function App() {
               </li>
             </ul>
           </nav>
-
-          {/* Routes */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/campuses/*" element={<Campuses />} />
@@ -40,7 +38,6 @@ function App() {
             <Route path="/students/:id" element={<Student />} />
             <Route path="/campuses/add" element={<AddNewCampus/>} />
             <Route path="/students/add" element={<AddNewStudent />} />
-
           </Routes>
         </div>
       </Router>
