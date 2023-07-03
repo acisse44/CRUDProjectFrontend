@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../App/App.css';
 
 function Students(props) {
@@ -23,8 +24,13 @@ function Students(props) {
           {allStudents.map((student) => (
             <div key={student.id} id="student">
               <img src={student.imageUrl} alt={student.firstName} id="studentImage" />
-              <h1 id="student-name">{student.firstName} {student.lastName}</h1>
+              <h1 id="student-name">
+              <Link to={`/students/${student.id}`}>{student.firstName} {student.lastName}</Link>
+              </h1>
               <h1 id="student-campus">{getCampusName(student.campusId)}</h1>
+              <button className="student-button-delete" onClick={() => handleDelete(student.id)}>
+                Delete
+              </button>
             </div>
           ))}
         </div>

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux"
-import {  fetchSingleStudentThunk }  from "../../Redux/students/students.actions"
+import {  fetchSingleStudentThunk, deleteAStudentThunk}  from "../../Redux/students/students.actions"
 import SingleStudentList from "../../Components/SingleStudentList"
 import { useParams } from 'react-router-dom';
 
@@ -13,6 +13,10 @@ import { useParams } from 'react-router-dom';
     return dispatch(fetchSingleStudentThunk(id));
   }
 
+  const handleDelete = (id) => {
+    dispatch(deleteAStudentThunk(id));
+  };
+
   useEffect(() => {
     fetchSingleStudent()
   }, [id])
@@ -22,7 +26,7 @@ import { useParams } from 'react-router-dom';
       <h1>Student</h1> 
       <button>Edit</button>
         <div id="singleStudentList">
-          <SingleStudentList student={singleStudent} />
+          <SingleStudentList student={singleStudent} handleDelete={handleDelete} />
         </div>
     </div>
   )
