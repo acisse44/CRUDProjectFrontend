@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addCampusThunk } from '../../Redux/campuses/campuses.actions';
 import Campuses from '../campuses/Campuses';
+import "../../CSS/campusForm.css"
 
 function AddNewCampus() {
   const dispatch = useDispatch();
@@ -50,33 +51,33 @@ function AddNewCampus() {
 
   return (
     <div>
-      <h1>Add A New Campus</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>
+      <h1 class="form-title">Add A New Campus</h1>
+      <form class="form" onSubmit={handleSubmit}>
+        <div class="input">
+          <label class="input-label">
             Campus Name:
-            <input type="text" value={name} onChange={handleCampusNameChange} />
+            <input class="input-field" type="text" value={name} onChange={handleCampusNameChange} />
           </label>
         </div>
-        <div>
-          <label>
+        <div class="input">
+          <label class="input-label">
             Image URL:
-            <input type="text" value={imageUrl} onChange={handleImageUrlChange} />
+            <input class="input-field" type="text" value={imageUrl} onChange={handleImageUrlChange} />
           </label>
         </div>
-        <div>
-          <label>
+        <div class="input">
+          <label class="input-label">
             Description:
-            <input type="text" value={description} onChange={handleDescriptionChange} />
+            <input class="input-field" type="text" value={description} onChange={handleDescriptionChange} />
           </label>
         </div>
-        <div>
-          <label>
+        <div class="input">
+          <label class="input-label">
             Address:
-            <input type="text" value={address} onChange={handleAddressChange} />
+            <input class="input-field" type="text" value={address} onChange={handleAddressChange} />
           </label>
         </div>
-        <button type="submit">Submit</button>
+        <button class="button-submit" type="submit">Submit</button>
       </form>
     </div>
   );
