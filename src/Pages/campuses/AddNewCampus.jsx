@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { addCampusThunk } from '../../Redux/campuses/campuses.actions';
-import Campuses from '../campuses/Campuses';
 
 function AddNewCampus() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [imageUrl, setImageUrl] = useState('');
   const [description, setDescription] = useState('');
@@ -44,8 +45,10 @@ function AddNewCampus() {
     setSubmitted(true);
   };
 
+
   if (submitted) {
-      return <Campuses />;
+    navigate("/campuses");
+    return null;
   }
 
   return (
