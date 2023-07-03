@@ -3,10 +3,11 @@ import CampusActionType from "./campuses.types";
 
 
 //Add a single campus
-export const addCampus = () => {
+export const addCampus = (campusData) => {
     console.log("Add campus action");
     return {
       type: CampusActionType.ADD_CAMPUS,
+      payload: campusData,
     };
 };
 
@@ -21,6 +22,7 @@ export const addCampusThunk = (campusData) => {
                 campusData
             );
             console.log("addCampusThunk completed");
+            console.log("RESPONSE_DATA", response.data);
             // Dispatch the addCampus action with the response data
             dispatch(addCampus(response.data));
             dispatch(fetchAllCampusesThunk());
