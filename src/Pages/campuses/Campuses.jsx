@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { fetchAllCampusesThunk, deleteACampusThunk } from '../../Redux/campuses/campuses.actions';
-import CampusesList from '../../Components/CampusesList';
+import CampusesList from '../../Components/AllCampusesList';
 import '../../App/App.css';
 
 function Campuses() {

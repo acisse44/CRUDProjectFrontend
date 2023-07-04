@@ -1,9 +1,15 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 function SingleCampusList(props) {
   const { campus, handleDelete } = props;
   const students = campus.students;
+  const navigate = useNavigate();
+
+
+  const handleEdit = (studentId) => {
+    navigate(`/students/${studentId}/edit`);
+  };
 
   return (
     <div className="single-campus-container">
@@ -30,7 +36,8 @@ function SingleCampusList(props) {
                 <h1 id="student-name">
                 <Link to={`/students/${student.id}`}>{student.firstName} {student.lastName}</Link>
                 </h1>
-                <button className="student-button-delete" onClick={() => handleDelete(student.id)}>
+                <button className="button-edit button-size" onClick={() => handleEdit(student.id)}>Edit</button>
+                <button className="student-button-delete button-size" onClick={() => handleDelete(student.id)}>
                   Delete
                 </button>
               </div>

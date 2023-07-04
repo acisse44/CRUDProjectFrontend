@@ -382,3 +382,7 @@
   max-height: 100%;
   text-align: center;
 }
+
+.button-size {
+  width: 80px;
+}
