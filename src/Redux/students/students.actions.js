@@ -1,31 +1,6 @@
 import axios from "axios";
 import StudentActionType from "./students.types";
 
-export const addStudent = (studentData) => {
-    console.log("Add student action");
-    return {
-      type: StudentActionType.ADD_STUDENT,
-      payload: studentData,
-    };
-};
-
-export const addStudentThunk = (studentData) => {
-    return async (dispatch) => {
-        try {
-            console.log("addStudentThunk is firing");
-            const response = await axios.post(
-                "http://localhost:8080/api/students",
-                studentData
-            );
-            console.log("addStudentThunk completed");
-            dispatch(addStudent(response.data));
-            dispatch(fetchAllStudentsThunk());
-        } catch (error) {
-            console.error(error);
-      }
-    };
-};
-
 export const fetchAllStudents = (payload) => {
     console.log("Fetch all students action");
     return {
@@ -68,6 +43,31 @@ export const fetchSingleStudentThunk = (studentId) => {
     };
 };
 
+export const addStudent = (studentData) => {
+    console.log("Add student action");
+    return {
+      type: StudentActionType.ADD_STUDENT,
+      payload: studentData,
+    };
+};
+
+export const addStudentThunk = (studentData) => {
+    return async (dispatch) => {
+        try {
+            console.log("addStudentThunk is firing");
+            const response = await axios.post(
+                "http://localhost:8080/api/students",
+                studentData
+            );
+            console.log("addStudentThunk completed");
+            dispatch(addStudent(response.data));
+            dispatch(fetchAllStudentsThunk());
+        } catch (error) {
+            console.error(error);
+      }
+    };
+};
+
 export const deleteAStudent = (payload) => {
     console.log("Delete a student action");
     return {
@@ -89,3 +89,34 @@ export const deleteAStudentThunk = (studentId) => {
         }
     };
 };
+
+export const editStudent = (studentId, updates) => {
+  console.log("Edit student action");
+  return {
+    type: StudentActionType.EDIT_STUDENT,
+    payload: {
+      id: studentId,
+      updates: updates,
+    },
+  };
+};
+
+export const editStudentThunk = (studentId, updates) => {
+    return async (dispatch) => {
+      try {
+        console.log("editStudentThunk is firing");
+
+        console.log("studentDATA", updates);
+        console.log("studentId", studentId);
+
+        const response = await axios.put(
+          `http://localhost:8080/api/students/${studentId}`,
+          updates
+        );
+        console.log("editStudentThunk completed");
+        dispatch(editStudent(studentId, response.data));
+      } catch (error) {
+        console.error(error);
+      }
+    };
+  };

@@ -1,32 +1,41 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from "react-redux"
-import {  fetchSingleCampusThunk }  from "../../Redux/campuses/campuses.actions"
-import SingleCampusList from "../../Components/SingleCampusList"
-import { useParams } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchSingleCampusThunk } from '../../Redux/campuses/campuses.actions';
+import { deleteAStudentThunk } from '../../Redux/students/students.actions';
+import SingleCampusList from '../../Components/SingleCampusList';
+import { useNavigate, useParams } from 'react-router-dom';
 
- function Campus() {
-  const singleCampus = useSelector((state) => state.campuses.singleCampus);
-  console.log(singleCampus);
-  const dispatch = useDispatch()
+function Campus() {
+  const campus = useSelector((state) => state.campuses.singleCampus);
+  //console.log(campus);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { id } = useParams();
   const fetchSingleCampus = () => {
     return dispatch(fetchSingleCampusThunk(id));
   }
 
+  const handleDelete = (id) => {
+    dispatch(deleteAStudentThunk(id));
+  };
+
+  const handleEdit = () => {
+    navigate(`/campuses/${id}/edit`);
+  };
+  
   useEffect(() => {
-    fetchSingleCampus()
-  }, [id])
+    fetchSingleCampus();
+  }, [id]);
 
   return (
     <div>
-      <h1 style = {{fontSize: '55px'}}>Campus</h1> 
-      <button>Edit</button>
+      <h1>Campus</h1> 
+      <button className="button-edit" onClick={handleEdit}>Edit</button>
         <div id="singleCampusList">
-          <SingleCampusList campus={singleCampus} />
+          <SingleCampusList campus={campus} handleDelete={handleDelete} />
         </div>
     </div>
   )
 }
-
 
 export default Campus;

@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 function SingleCampusList(props) {
-  const { campus } = props;
+  const { campus, handleDelete } = props;
   const students = campus.students;
 
   return (
@@ -23,31 +24,27 @@ function SingleCampusList(props) {
           </div>
           </div>
 
-          {students && students.length > 0 ? (
-            <div className="students-list">
-              <h2>Students</h2>
-              <ul>
-                {students.map((student) => (
-                  <div key={student.id} className="student">
-                    <div>
-                      <img
-                        src={student.imageUrl}
-                        alt={student.firstName}
-                        className="student-image"
-                      />
-                      <div className="student-name">
-                        {student.firstName} {student.lastName}
-                      </div>
-                      <div className="student-email">{student.email}</div>
-                    </div>
-                  </div>
-                ))}
-              </ul>
-            </div>
-          ) : (
-            <div>No students</div>
-          )}
+      { students && students.length > 0 ? (
+        <div>
+          <h2>Students</h2>
+          <div id="student-container">
+            {students.map((student) => (
+              <div key={student.id} id="student">
+                <img src={student.imageUrl} alt={student.firstName} id="studentImage" />
+                <h1 id="student-name">
+                <Link to={`/students/${student.id}`}>{student.firstName} {student.lastName}</Link>
+                </h1>
+                <button className="student-button-delete" onClick={() => handleDelete(student.id)}>
+                  Delete
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
+      ) : (
+          <div>No students</div>
+        )}
+      </div>
       )}
     </div>
   );
