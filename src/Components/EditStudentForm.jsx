@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { fetchSingleStudentThunk, editStudentThunk } from '../Redux/students/students.actions';
+import { fetchAllCampusesThunk, deleteACampusThunk } from '../Redux/campuses/campuses.actions';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { addStudentThunk } from '../../Redux/students/students.actions';
-import "../../CSS/campusForm.css"
+import { all } from 'axios';
 
-function AddNewStudent() {
+function EditStudentForm(props) {
+  const studentId = props.studentId.id;
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const student = useSelector((state) => state.students.singleStudent);
   const allCampuses = useSelector((state) => state.campuses.allCampuses);
+
+  console.log("allCampuses", allCampuses);
   const [studentData, setStudentData] = useState({
     firstName: '',
     lastName: '',
@@ -16,21 +22,35 @@ function AddNewStudent() {
     gpa: '',
     campusId: '',
   });
+
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    dispatch(fetchAllCampusesThunk());
+    dispatch(fetchSingleStudentThunk(studentId));
+  }, [studentId, dispatch]);
+
+  useEffect(() => {
+    if (student) {
+      setStudentData({
+        firstName: student.firstName,
+        lastName: student.lastName,
+        imageUrl: student.imageUrl,
+        email: student.email,
+        gpa: student.gpa,
+        campusId: studentData.campusId,
+      });
+    }
+  }, [student]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setStudentData((prevData) => ({ ...prevData, [name]: value }));
+    setStudentData((prevState) => ({ ...prevState, [name]: value,}));
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (!studentData.firstName || !studentData.lastName || 
-        !studentData.email || !studentData.gpa || !studentData.campusId) {
-      alert('Please fill out all required fields.');
-      return;
-    }
-    dispatch(addStudentThunk(studentData));
+    dispatch(editStudentThunk(studentId, studentData));
 
     setStudentData({
       firstName: '',
@@ -43,85 +63,86 @@ function AddNewStudent() {
     setSubmitted(true);
   };
 
+  const handleReturn = () => {
+    navigate(`/students/${studentId}`);
+  };
+
   if (submitted) {
-    navigate("/students");
-    return null;
+    return (
+      <div className="edit-form-message-container">
+      <h2>Success!</h2>
+      <p>Student details have been updated.</p>
+      <button className="button-submit" type="return" onClick={handleReturn}>Return</button>
+    </div>
+    );
   }
 
   return (
     <div>
-      <h1 className="form-title">Add A New Student</h1>
+      <h1 className="form-title">Edit Student Details</h1>
       <form className="form" onSubmit={handleSubmit}>
         <div className="input">
-          <label htmlFor="firstName" className="input-label">
+          <label className="input-label" htmlFor="firstName">
             First Name:
             <input
-              id="firstName"
               className="input-field"
               type="text"
+              id="firstName"
               name="firstName"
               value={studentData.firstName}
               onChange={handleChange}
-              placeholder="Enter your first name"
             />
           </label>
         </div>
         <div className="input">
-          <label htmlFor="lastName" className="input-label">
+          <label className="input-label" htmlFor="lastName">
             Last Name:
             <input
-              id="lastName"
               className="input-field"
               type="text"
+              id="lastName"
               name="lastName"
               value={studentData.lastName}
               onChange={handleChange}
-              placeholder="Enter your last name"
-
             />
           </label>
         </div>
         <div className="input">
-          <label htmlFor="imageUrl" className="input-label">
+          <label className="input-label" htmlFor="imageUrl">
             Image URL:
             <input
-              id="imageUrl"
               className="input-field"
               type="text"
+              id="imageUrl"
               name="imageUrl"
               value={studentData.imageUrl}
               onChange={handleChange}
-              placeholder="Enter your image URL"
-
             />
           </label>
         </div>
         <div className="input">
-          <label htmlFor="email" className="input-label">
+          <label className="input-label" htmlFor="email">
             Email:
             <input
-              id="email"
               className="input-field"
               type="text"
+              id="email"
               name="email"
               value={studentData.email}
               onChange={handleChange}
-              placeholder="Enter your email address"
-
             />
           </label>
         </div>
         <div className="input">
-          <label htmlFor="gpa" className="input-label">
+          <label className="input-label" htmlFor="gpa">
             GPA:
             <input
-              id="gpa"
               className="input-field"
               type="text"
+              id="gpa"
               name="gpa"
               value={studentData.gpa}
               onChange={handleChange}
-              placeholder="Enter your GPA"
             />
           </label>
         </div>
@@ -150,4 +171,4 @@ function AddNewStudent() {
   );
 }
 
-export default AddNewStudent;
+export default EditStudentForm;
