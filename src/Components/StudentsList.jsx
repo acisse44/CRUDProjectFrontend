@@ -2,7 +2,7 @@ import React from 'react';
 import '../App/App.css';
 
 function Students(props) {
-  const { allStudents, allCampuses, handleDelete } = props;
+  const { allStudents, allCampuses } = props;
   const campusesArray = Object.values(allCampuses);
 
   const getCampusName = (campusId) => {

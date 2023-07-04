@@ -1,8 +1,6 @@
 import axios from "axios";
 import CampusActionType from "./campuses.types";
 
-
-//Add a single campus
 export const addCampus = (campusData) => {
     console.log("Add campus action");
     return {
@@ -11,19 +9,15 @@ export const addCampus = (campusData) => {
     };
 };
 
-// Thunk function to asynchronously add a single campus and dispatch the action
 export const addCampusThunk = (campusData) => {
     return async (dispatch) => {
         try {
             console.log("addCampusThunk is firing");
-            // Make an asynchronous request to add a campus to the server
             const response = await axios.post(
                 "http://localhost:8080/api/campuses",
                 campusData
             );
             console.log("addCampusThunk completed");
-            console.log("RESPONSE_DATA", response.data);
-            // Dispatch the addCampus action with the response data
             dispatch(addCampus(response.data));
             dispatch(fetchAllCampusesThunk());
         } catch (error) {
@@ -32,7 +26,6 @@ export const addCampusThunk = (campusData) => {
     };
 };
 
-//Action creator function to fetch a single campus
 export const fetchSingleCampus = (payload) => {
     console.log("Fetch single campus action");
     return {
@@ -41,15 +34,12 @@ export const fetchSingleCampus = (payload) => {
     };
 };
 
-// Thunk function to asynchronously fetch a single campus and dispatch the action
 export const fetchSingleCampusThunk = (campusId) => {
     return async (dispatch) => {
         try {
             console.log("fetchSingleCampusThunk is firing");
-            // Make an asynchronous request to fetch a single campus from the server
             const response = await axios.get(`http://localhost:8080/api/campuses/${campusId}`);
             console.log("fetchSingleCampusThunk completed");
-            // Dispatch the fetchSingleCampus action with the response data
             dispatch(fetchSingleCampus(response.data));
         } catch (error) {
             console.error(error);
@@ -57,7 +47,6 @@ export const fetchSingleCampusThunk = (campusId) => {
     };
 };
 
-// Action creator function to fetch all campuses
 export const fetchAllCampuses = (payload) => {
     console.log("Fetch all campuses action");
     return {
@@ -66,15 +55,12 @@ export const fetchAllCampuses = (payload) => {
     };
 };
 
-// Thunk function to asynchronously fetch all campus and dispatch the action
 export const fetchAllCampusesThunk = () => {
     return async (dispatch) => {
         try {
             console.log("fetchAllCampusesThunk is firing");
-            // Make an asynchronous request to fetch all campuses from the server
             const response = await axios.get("http://localhost:8080/api/campuses");
             console.log("fetchAllCampusesThunk completed");
-            // Dispatch the fetchAllCampuses action with the response data
             dispatch(fetchAllCampuses(response.data));
         } catch (error) {
             console.error(error);
@@ -82,7 +68,6 @@ export const fetchAllCampusesThunk = () => {
     };
 };
 
-// Action creator function to delete a campus
 export const deleteACampus = (payload) => {
     console.log("Delete a campus action");
     return {
@@ -91,15 +76,12 @@ export const deleteACampus = (payload) => {
     };
 };
 
-// Thunk function to asynchronously delete a campus and dispatch the action
 export const deleteACampusThunk = (campusId) => {
     return async (dispatch) => {
         try {
             console.log("deleteACampusThunk is firing");
-            // Make an asynchronous request to delete a campuses from the server
             const response = await axios.delete(`http://localhost:8080/api/campuses/${campusId}`);
             console.log("deleteACampusThunk completed");
-            // Dispatch the deleteACampus action with the response data
             dispatch(deleteACampus(response.data));
             dispatch(fetchAllCampusesThunk());
         } catch (error) {

@@ -3,12 +3,10 @@ import React from "react";
 function SingleCampusList(props) {
   const { campus } = props;
   const students = campus.students;
-  console.log("CAMPUS:", campus);
-  console.log("STUDENT:", students.length);
 
   return (
     <div className="single-campus-container">
-      {Object.keys(campus).length === 0 ? (
+      { !campus && campus.length === 0 ? (
         <div>
           <div>Empty</div>
           <div>No campus</div>
