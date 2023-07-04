@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { addStudentThunk } from '../../Redux/students/students.actions';
 import Students from '../students/Students';
 import "../../CSS/campusForm.css"
 
+
 function AddNewStudent() {
   const dispatch = useDispatch();
-  const campuses = useSelector((state) => state.campuses); // Assuming you have a 'campuses' slice of state in your Redux store
-
+  const navigate = useNavigate();
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [imageUrl, setImageUrl] = useState('');
@@ -64,7 +65,8 @@ function AddNewStudent() {
   };
 
   if (submitted) {
-    return <Students />;
+    navigate("/students");
+    return null;
   }
 
   return (
