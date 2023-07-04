@@ -18,7 +18,6 @@ function App() {
     <Provider store={store}>
       <Router>
         <div className="App">
-          {/* Navigation */}
           <nav className="nav-container">
             <ul className="nav-links">
               <li className="nav-item-left">

@@ -29,8 +29,8 @@ function CampusesList(props) {
                 <Link to={`/campuses/${campus.id}`}>{campus.name}</Link>
               </h1>
               <p id="campus-students">{studentsCount(campus)} students</p>
-              <button className="button-edit" onClick={() => handleEdit(campus.id)}>Edit</button>
-              <button className="button-delete" onClick={() => handleDelete(campus.id)}>
+              <button className="button-edit button-size" onClick={() => handleEdit(campus.id)}>Edit</button>
+              <button className="button-delete button-size" onClick={() => handleDelete(campus.id)}>
                 Delete
               </button>
             </div>
