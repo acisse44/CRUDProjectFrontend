@@ -28,7 +28,7 @@ import StudentsList from "../../Components/AllStudentsList"
 
   return (
     <div>
-      <h1 className= "title"> All Students</h1> 
+      <h1 style = {{fontSize: '60px'}}className= "title"> All Students</h1> 
       <button className="button-add" onClick={handleAddStudent}>Add Student</button>
         <div id="studentsList">
           <StudentsList allStudents={allStudents} allCampuses={allCampuses} handleDelete={handleDelete}/>

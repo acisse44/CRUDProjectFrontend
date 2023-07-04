@@ -28,7 +28,7 @@ function Campuses() {
 
   return (
     <div>
-      <h1 className="title">All Campuses</h1>
+      <h1 style = {{fontSize: '60px'}}className="title">All Campuses</h1>
       <button className="button-add" onClick={handleAddCampus}>Add Campus</button>
       <div id="campusesList">
         <CampusesList allCampuses={allCampuses} handleDelete={handleDelete} />

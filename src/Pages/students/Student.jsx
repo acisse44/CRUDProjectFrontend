@@ -23,7 +23,7 @@ import { useParams } from 'react-router-dom';
 
   return (
     <div>
-      <h1>Student</h1> 
+      <h1 style = {{fontSize: '55px'}}>Student</h1> 
       <button>Edit</button>
         <div id="singleStudentList">
           <SingleStudentList student={singleStudent} handleDelete={handleDelete} />
