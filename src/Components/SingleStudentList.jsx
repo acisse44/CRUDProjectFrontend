@@ -18,12 +18,16 @@ function SingleStudentList(props) {
       ) : (
         <div>
           <div id="singleStudent" key={student.id}>
-            <img src={student.imageUrl} alt={student.firstName} id="singleStudentImage" />
             <div>
-              {student.firstName} {student.lastName}
+              <img src={student.imageUrl} alt={student.firstName} id="singleStudentImage" style={{width: '350px', height: '250px'}}/>
             </div>
-            <div>{student.gpa}</div>
-            <div>{student.email}</div>
+            <div>
+            <h2 id="first-name" style ={{fontSize: '50px', marginRight: '35px', marginTop: '50px', marginLeft: '35px',  marginBottom: '135px', fontFamily: 'Lucida Sans'}}>{student.firstName} {student.lastName}</h2>
+          <div>
+            <div id = "student-email" style = {{ marginBottom: '10px', fontSize: '25px'}}>Email: {student.email}</div>
+            <div id = "student-GPA" style = {{marginBottom: '60px', fontSize: '25px'}}> GPA: {student.gpa}</div>
+          </div>
+            </div>
           </div>
 
           {campus ? (

@@ -19,7 +19,7 @@ import { useParams } from 'react-router-dom';
 
   return (
     <div>
-      <h1>Campus</h1> 
+      <h1 style = {{fontSize: '55px'}}>Campus</h1> 
       <button>Edit</button>
         <div id="singleCampusList">
           <SingleCampusList campus={singleCampus} />

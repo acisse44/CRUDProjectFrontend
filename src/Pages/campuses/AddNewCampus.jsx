@@ -54,34 +54,22 @@ function AddNewCampus() {
   }
 
   return (
-    <div>
-      <h1 class="form-title">Add A New Campus</h1>
-      <form class="form" onSubmit={handleSubmit}>
-        <div class="input">
-          <label class="input-label">
-            Campus Name:
-            <input class="input-field" type="text" value={name} onChange={handleCampusNameChange} />
-          </label>
+    <div id = "addingNewCampus">
+      <h1 id = "addCampus"> Add a New Campus</h1>
+      <form onSubmit={handleSubmit}>
+        <div>
+            <input style = {{backgroundColor: 'white', border: '1px solid black'}}type="text" id="campNameInput" value={name} onChange={handleCampusNameChange} placeholder="Enter Campus Name" />
         </div>
-        <div class="input">
-          <label class="input-label">
-            Image URL:
-            <input class="input-field" type="text" value={imageUrl} onChange={handleImageUrlChange} />
-          </label>
+        <div>
+            <input style = {{backgroundColor: 'white', border: '1px solid black'}}type="text" id="campImgInput"value={imageUrl} onChange={handleImageUrlChange} placeholder="Enter Image URL" />
         </div>
-        <div class="input">
-          <label class="input-label">
-            Description:
-            <input class="input-field" type="text" value={description} onChange={handleDescriptionChange} />
-          </label>
+        <div>
+            <textarea style = {{border: '1px solid black'}}type="text" id="campDescInput"value={description} onChange={handleDescriptionChange} placeholder="Enter Description" />
         </div>
-        <div class="input">
-          <label class="input-label">
-            Address:
-            <input class="input-field" type="text" value={address} onChange={handleAddressChange} />
-          </label>
+        <div>
+            <input style = {{backgroundColor: 'white', border: '1px solid black'}}type="text" id="campAddyInput"value={address} onChange={handleAddressChange} placeholder="Enter Address"/>
         </div>
-        <button class="button-submit" type="submit">Submit</button>
+        <button type="submit" id="campSubmit">Submit</button>
       </form>
     </div>
   );
