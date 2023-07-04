@@ -20,7 +20,7 @@ function CampusesList(props) {
             <div key={campus.id} id="campus">
               {campus.imageUrl && <img src={campus.imageUrl} alt={campus.name} id="campusImage" />}
               <h1 id="campus-name">
-                <Link to={`/campuses/${campus.id}`}>{campus.description}</Link>
+                <Link to={`/campuses/${campus.id}`}>{campus.name}</Link>
               </h1>
               <p id="campus-students">{studentsCount(campus)} students</p>
               <button className="button-edit">Edit</button>

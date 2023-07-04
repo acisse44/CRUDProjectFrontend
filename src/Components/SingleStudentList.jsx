@@ -1,8 +1,12 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 function SingleStudentList(props) {
-  const { student } = props;
+  const { student, handleDelete } = props;
   const campus = student.campus;
+  const studentsCount = (campus) => {
+    return campus.students && campus.students.length > 0 ? campus.students.length : 0;
+  }
 
   return (
     <div className="single-student-container">
@@ -29,17 +33,17 @@ function SingleStudentList(props) {
           )}
 
           {campus && (
-            <div className="studentCampus">
-              <div id="studentCampus" key={campus.id}>
-                <img
-                  src={campus.imageUrl}
-                  alt={campus.Name}
-                  id="studentCampusImage"
-                />
-                <div>{campus.description}</div>
-                <div>{campus.address}</div>
-              </div>
-            </div>
+             <div key={campus.id} id="campus">
+             {campus.imageUrl && <img src={campus.imageUrl} alt={campus.name} id="campusImage" />}
+             <h1 id="campus-name">
+               <Link to={`/campuses/${campus.id}`}>{campus.name}</Link>
+             </h1>
+             <p id="campus-students">{studentsCount(campus)} students</p>
+             <button className="button-edit">Edit</button>
+             <button className="button-delete" onClick={() => handleDelete(campus.id)}>
+               Delete
+             </button>
+           </div>
           )}
         </div>
       )}
