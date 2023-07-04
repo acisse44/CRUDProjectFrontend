@@ -28,9 +28,7 @@ function Students(props) {
               <Link to={`/students/${student.id}`}>{student.firstName} {student.lastName}</Link>
               </h1>
               <h1 id="student-campus">{getCampusName(student.campusId)}</h1>
-              <button className="student-button-delete" onClick={() => handleDelete(student.id)}>
-                Delete
-              </button>
+              
             </div>
           ))}
         </div>
