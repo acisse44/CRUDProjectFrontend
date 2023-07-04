@@ -15,10 +15,6 @@ function Campus() {
     return dispatch(fetchSingleCampusThunk(id));
   }
 
-  const handleDelete = (id) => {
-    dispatch(deleteAStudentThunk(id));
-  };
-
   const handleEdit = () => {
     navigate(`/campuses/${id}/edit`);
   };

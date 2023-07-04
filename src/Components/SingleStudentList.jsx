@@ -1,8 +1,11 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate, Link } from 'react-router-dom';
+import { deleteAStudentThunk } from "../Redux/students/students.actions";
 
 function SingleStudentList(props) {
-  const { student, handleDelete } = props;
+  const { student } = props;
+  const dispatch = useDispatch();
   const campus = student.campus;
   const navigate = useNavigate();
   const studentsCount = (campus) => {
@@ -15,6 +18,10 @@ function SingleStudentList(props) {
     } else {
       navigate(`/campuses/${id}/edit`);
     }
+  };
+
+  const handleDelete = (id) => {
+    dispatch(deleteAStudentThunk(id));
   };
 
   return (
