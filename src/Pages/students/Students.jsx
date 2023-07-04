@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from 'react-router-dom';
 import {  fetchAllStudentsThunk, deleteAStudentThunk }  from "../../Redux/students/students.actions"
-import StudentsList from "../../Components/StudentsList"
+import StudentsList from "../../Components/AllStudentsList"
 
  function Students() {
   const allStudents = useSelector((state) => state.students.allStudents)
