@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../App/App.css';
 
 function Students(props) {
-  const { allStudents, allCampuses } = props;
+  const { allStudents, allCampuses, handleDelete } = props;
   const campusesArray = Object.values(allCampuses);
 
   const getCampusName = (campusId) => {
