@@ -1,52 +1,37 @@
-import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import { addCampusThunk } from '../../Redux/campuses/campuses.actions';
-import Campuses from '../campuses/Campuses';
-import "../../CSS/campusForm.css"
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function AddNewCampus() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [name, setName] = useState('');
-  const [imageUrl, setImageUrl] = useState('');
-  const [description, setDescription] = useState('');
-  const [address, setAddress] = useState('');
+  const [campusData, setCampusData] = useState({
+    name: '',
+    imageUrl: '',
+    description: '',
+    address: '',
+  });
+
   const [submitted, setSubmitted] = useState(false);
 
-  const handleCampusNameChange = (event) => {
-    setName(event.target.value);
-  };
-
-  const handleImageUrlChange = (event) => {
-    setImageUrl(event.target.value);
-  };
-
-  const handleDescriptionChange = (event) => {
-    setDescription(event.target.value);
-  };
-
-  const handleAddressChange = (event) => {
-    setAddress(event.target.value);
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setCampusData((prevState) => ({ ...prevState, [name]: value,}));
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const campusData = {
-      name,
-      imageUrl,
-      description,
-      address,
-    };
     dispatch(addCampusThunk(campusData));
 
-    setName('');
-    setImageUrl('');
-    setDescription('');
-    setAddress('');
+    setCampusData({
+      name: '',
+      imageUrl: '',
+      description: '',
+      address: '',
+    });
     setSubmitted(true);
   };
-
 
   if (submitted) {
     navigate("/campuses");
@@ -55,33 +40,61 @@ function AddNewCampus() {
 
   return (
     <div>
-      <h1 class="form-title">Add A New Campus</h1>
-      <form class="form" onSubmit={handleSubmit}>
-        <div class="input">
-          <label class="input-label">
+      <h1 className="form-title">Add A New Campus</h1>
+      <form className="form" onSubmit={handleSubmit}>
+        <div className="input">
+          <label className="input-label" htmlFor="name">
             Campus Name:
-            <input class="input-field" type="text" value={name} onChange={handleCampusNameChange} />
+            <input
+              className="input-field"
+              type="text"
+              id="name"
+              name="name"
+              value={campusData.name}
+              onChange={handleChange}
+            />
           </label>
         </div>
-        <div class="input">
-          <label class="input-label">
+        <div className="input">
+          <label className="input-label" htmlFor="imageUrl">
             Image URL:
-            <input class="input-field" type="text" value={imageUrl} onChange={handleImageUrlChange} />
+            <input
+              className="input-field"
+              type="text"
+              id="imageUrl"
+              name="imageUrl"
+              value={campusData.imageUrl}
+              onChange={handleChange}
+            />
           </label>
         </div>
-        <div class="input">
-          <label class="input-label">
+        <div className="input">
+          <label className="input-label" htmlFor="description">
             Description:
-            <input class="input-field" type="text" value={description} onChange={handleDescriptionChange} />
+            <input
+              className="input-field"
+              type="text"
+              id="description"
+              name="description"
+              value={campusData.description}
+              onChange={handleChange}
+            />
           </label>
         </div>
-        <div class="input">
-          <label class="input-label">
+        <div className="input">
+          <label className="input-label" htmlFor="address">
             Address:
-            <input class="input-field" type="text" value={address} onChange={handleAddressChange} />
+            <input
+              className="input-field"
+              type="text"
+              id="address"
+              name="address"
+              value={campusData.address}
+              onChange={handleChange}
+            />
           </label>
         </div>
-        <button class="button-submit" type="submit">Submit</button>
+        <button className="button-submit" type="submit">Submit</button>
       </form>
     </div>
   );
