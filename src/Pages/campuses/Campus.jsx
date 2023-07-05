@@ -15,10 +15,6 @@ function Campus() {
     return dispatch(fetchSingleCampusThunk(id));
   }
 
-  const handleDelete = (id) => {
-    dispatch(deleteAStudentThunk(id));
-  };
-
   const handleEdit = () => {
     navigate(`/campuses/${id}/edit`);
   };
@@ -32,7 +28,7 @@ function Campus() {
       <h1>Campus</h1> 
       <button className="button-edit" onClick={handleEdit}>Edit</button>
         <div id="singleCampusList">
-          <SingleCampusList campus={campus} handleDelete={handleDelete} />
+          <SingleCampusList campus={campus} />
         </div>
     </div>
   )

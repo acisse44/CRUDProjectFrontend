@@ -13,10 +13,6 @@ import { useParams } from 'react-router-dom';
     return dispatch(fetchSingleStudentThunk(id));
   }
 
-  const handleDelete = (id) => {
-    dispatch(deleteAStudentThunk(id));
-  };
-
   useEffect(() => {
     fetchSingleStudent()
   }, [id])
@@ -26,7 +22,7 @@ import { useParams } from 'react-router-dom';
       <h1 style = {{fontSize: '55px'}}>Student</h1> 
       <button>Edit</button>
         <div id="singleStudentList">
-          <SingleStudentList student={singleStudent} handleDelete={handleDelete} />
+          <SingleStudentList student={singleStudent} />
         </div>
     </div>
   )
