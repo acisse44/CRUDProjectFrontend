@@ -1,42 +1,90 @@
 .campus-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
 .campus {
-    border: 3px solid;
-    width: 90vh;
-    height: 300px;
-    max-width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
-    box-sizing: border-box;
-    padding: 10px;
-  }
+  border: 3px solid;
+  width: 90vh;
+  height: 300px;
+  max-width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+}
 
-  .campus-image {
-    margin-right: 10px;
-    width: 200px;
-    height: 100px;
-  }
+.campus-image {
+  margin-right: 10px;
+  width: 200px;
+  height: 100px;
+}
 
-  .campus-name {
-    font-size: 40px;
-    margin-top: -5px;
-  }
+.campus-name {
+  font-size: 40px;
+  margin-top: -5px;
+}
 
-  .campus-address{
-    font-size: 20px;
-    margin-right: 100px;
-  }
+.campus-address {
+  font-size: 20px;
+  margin-right: 100px;
+}
 
-  .student-container {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 100%;
-  }
+.student-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.student {
+  border: 3px solid;
+  width: calc(20% - 20px);
+  height: 400px;
+  margin: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.studentImage {
+  width: 150px;
+  height: 200px;
+  float: center;
+}
+
+.student-name {
+  margin-top: -5px;
+  font-size: 30px;
+}
+
+.edit-button,
+.delete-button {
+  color: #ffffff;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-weight: 800;
+  padding: 0.75rem 0.875rem;
+  line-height: 1rem;
+  min-height: 2.5rem;
+  border-radius: 6px;
+  font-size: 15px;
+  text-align: center;
+  width: 80px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.edit-button {
+  background: #00a2ff;
+  border: 1px solid #00a2ff;
+  margin-right: 10px;
+}
+.delete-button {
+  background: #ff4742;
+  border: 1px solid #ff4742;
+  margin-left: 10px;
+}

@@ -13,9 +13,9 @@ import { useParams } from 'react-router-dom';
     return dispatch(fetchSingleStudentThunk(id));
   }
 
-  useEffect(() => {
-    fetchSingleStudent()
-  }, [id])
+   useEffect(() => {
+     fetchSingleStudent()
+   }, [id]);
 
   return (
     <div>
