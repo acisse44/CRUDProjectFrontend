@@ -278,7 +278,7 @@
   color: gray;
 } */
 
-.single-campus-container {
+.campus-container {
   display: flex;
   flex-direction: column;
   align-items: center;

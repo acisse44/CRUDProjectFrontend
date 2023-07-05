@@ -1,18 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import {  deleteAStudentThunk}  from "../Redux/students/students.actions"
+import { fetchSingleCampusThunk } from "../Redux/campuses/campuses.actions";
+
 
 function SingleCampusList(props) {
-  const { campus, handleDelete } = props;
+  const { campus } = props;
   const students = campus.students;
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [deletedStudentId, setDeletedStudentId] = useState(null);
 
+  const handleDelete = (id) => {
+    dispatch(deleteAStudentThunk(id));
+    setDeletedStudentId(id);
+  };
 
   const handleEdit = (studentId) => {
     navigate(`/students/${studentId}/edit`);
   };
 
+  useEffect(() => {
+    fetchSingleCampusThunk();
+  }, [deletedStudentId]);
+
   return (
-    <div className="single-campus-container">
+    <div className="campus-container">
       { !campus && campus.length === 0 ? (
         <div>
           <div>Empty</div>
