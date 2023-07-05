@@ -105,11 +105,7 @@
   text-align: center;
 }
 
-#student-container {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 100%;
-}
+
 
 #student {
   border: 3px solid;
@@ -193,10 +189,7 @@
   padding: 10px;
 }
 
-#campus-name {
-  font-size: 40px;
-  margin-top: -5px;
-}
+
 
 #campus-students {
   font-size: 35px;
@@ -214,10 +207,7 @@
   margin-bottom: 150px;
 }
 
-.campus-address{
-  font-size: 20px;
-  margin-right: 100px;
-}
+
 
 
 .button-add {
@@ -291,14 +281,6 @@
 }
 
 
-
-.campus-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 .students-list {
   display: flex;
   flex-direction: column;
@@ -333,8 +315,8 @@
 
 #singleStudentImage {
   margin-right: 10px;
-  width: 300px;
-  height: 300px;
+  width: 10px;
+  height: 10px;
   margin-left: 0;
   float: left;
   border: 10px solid rgb(97, 97, 97);
@@ -356,8 +338,8 @@
 
 #studentCampusImage {
   margin-right: 10px;
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
 }
 
 #student div {
@@ -378,25 +360,6 @@
   height: 100%;
 }
 
-.campus {
-  border: 3px solid;
-  width: 90vh;
-  height: 300px;
-  max-width: 100%;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  margin-left: 10px;
-  box-sizing: border-box;
-  padding: 10px;
-}
-
-.campus-image {
-  margin-right: 10px;
-  width: 200px;
-  height: 100px;
-}
 
 .campus-info {
   display: flex;
@@ -466,3 +429,11 @@ body{
   font-size: 25px;
 }
 
+.empty-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  position: relative;
+}

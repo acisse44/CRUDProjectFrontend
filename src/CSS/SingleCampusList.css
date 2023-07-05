@@ -1,0 +1,42 @@
+.campus-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+.campus {
+    border: 3px solid;
+    width: 90vh;
+    height: 300px;
+    max-width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+
+  .campus-image {
+    margin-right: 10px;
+    width: 200px;
+    height: 100px;
+  }
+
+  .campus-name {
+    font-size: 40px;
+    margin-top: -5px;
+  }
+
+  .campus-address{
+    font-size: 20px;
+    margin-right: 100px;
+  }
+
+  .student-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
