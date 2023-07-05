@@ -1,10 +1,15 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchSingleStudentThunk, editStudentThunk } from '../Redux/students/students.actions';
-import { fetchAllCampusesThunk, deleteACampusThunk } from '../Redux/campuses/campuses.actions';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { all } from 'axios';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchSingleStudentThunk,
+  editStudentThunk,
+} from "../Redux/students/students.actions";
+import {
+  fetchAllCampusesThunk,
+  deleteACampusThunk,
+} from "../Redux/campuses/campuses.actions";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../CSS/EditAddForms.css";
 
 function EditStudentForm(props) {
@@ -16,12 +21,12 @@ function EditStudentForm(props) {
 
   console.log("allCampuses", allCampuses);
   const [studentData, setStudentData] = useState({
-    firstName: '',
-    lastName: '',
-    imageUrl: '',
-    email: '',
-    gpa: '',
-    campusId: '',
+    firstName: "",
+    lastName: "",
+    imageUrl: "",
+    email: "",
+    gpa: "",
+    campusId: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -46,7 +51,7 @@ function EditStudentForm(props) {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setStudentData((prevState) => ({ ...prevState, [name]: value,}));
+    setStudentData((prevState) => ({ ...prevState, [name]: value }));
   };
 
   const handleSubmit = (event) => {
@@ -54,12 +59,12 @@ function EditStudentForm(props) {
     dispatch(editStudentThunk(studentId, studentData));
 
     setStudentData({
-      firstName: '',
-      lastName: '',
-      imageUrl: '',
-      email: '',
-      gpa: '',
-      campusId: '',
+      firstName: "",
+      lastName: "",
+      imageUrl: "",
+      email: "",
+      gpa: "",
+      campusId: "",
     });
     setSubmitted(true);
   };
@@ -71,10 +76,12 @@ function EditStudentForm(props) {
   if (submitted) {
     return (
       <div className="edit-form-message-container">
-      <h2>Success!</h2>
-      <p>Student details have been updated.</p>
-      <button className="button-submit" type="return" onClick={handleReturn}>Return</button>
-    </div>
+        <h2>Success!</h2>
+        <p>Student details have been updated.</p>
+        <button className="button-submit" type="return" onClick={handleReturn}>
+          Return
+        </button>
+      </div>
     );
   }
 
@@ -166,7 +173,9 @@ function EditStudentForm(props) {
             </select>
           </label>
         </div>
-        <button className="button-submit" type="submit">Submit</button>
+        <button className="button-submit" type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );

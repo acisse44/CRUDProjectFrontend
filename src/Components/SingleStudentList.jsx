@@ -16,7 +16,7 @@ function SingleStudentList(props) {
       ? campus.students.length
       : 0;
   };
-  console.log("STUDENTS", studentsCount(campus));
+  // console.log("STUDENTS", studentsCount(campus));
 
   const handleEdit = (id, option) => {
     if (option === 1) {
@@ -75,7 +75,7 @@ function SingleStudentList(props) {
               <h1 id="campus-name">
                 <Link to={`/campuses/${campus.id}`}>{campus.name}</Link>
               </h1>
-              <p id="campus-students">{studentsCount(campus)} students</p>
+              {/* <p id="campus-students">{studentsCount(campus)} students</p> */}
             </div>
           )}
         </div>

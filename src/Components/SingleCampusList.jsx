@@ -1,22 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { deleteAStudentThunk } from "../Redux/students/students.actions";
 import { fetchSingleCampusThunk } from "../Redux/campuses/campuses.actions";
+import "../CSS/SingleCampusList.css";
 
 function SingleCampusList(props) {
   const { campus } = props;
   const students = campus.students;
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [deletedStudentId, setDeletedStudentId] = useState(null);
 
   const handleDelete = (id) => {
     // Refreshes the page automatically after you delete
     dispatch(deleteAStudentThunk(id)).then(() =>
       dispatch(fetchSingleCampusThunk(campus.id))
     );
-    setDeletedStudentId(id);
   };
 
   const handleEdit = (studentId) => {
@@ -38,58 +37,38 @@ function SingleCampusList(props) {
                 src={campus.imageUrl}
                 alt={campus.Name}
                 className="campus-image"
-                style={{ width: "350px", height: "250px" }}
               />
             </div>
             <div>
-              <h2
-                className="campus-name"
-                style={{
-                  fontSize: "50px",
-                  marginRight: "45px",
-                  marginBottom: "135px",
-                  fontFamily: "Lucida Sans",
-                }}
-              >
-                {campus.name}
-              </h2>
-              <div
-                className="campus-address"
-                style={{
-                  fontSize: "25px",
-                  marginBotton: "100px",
-                  marginLeft: "60px",
-                }}
-              >
-                {campus.address}
-              </div>
+              <h2 className="campus-name">{campus.name}</h2>
+              <div className="campus-address">{campus.address}</div>
             </div>
           </div>
 
           {students && students.length > 0 ? (
             <div>
               <h2>Students</h2>
-              <div id="student-container">
+              <div className="student-container">
                 {students.map((student) => (
-                  <div key={student.id} id="student">
+                  <div key={student.id} className="student">
                     <img
                       src={student.imageUrl}
                       alt={student.firstName}
-                      id="studentImage"
+                      className="student-image"
                     />
-                    <h1 id="student-name">
+                    <h1 className="student-name">
                       <Link to={`/students/${student.id}`}>
                         {student.firstName} {student.lastName}
                       </Link>
                     </h1>
                     <button
-                      className="button-edit button-size"
+                      className="edit-button"
                       onClick={() => handleEdit(student.id)}
                     >
                       Edit
                     </button>
                     <button
-                      className="student-button-delete button-size"
+                      className="delete-button"
                       onClick={() => handleDelete(student.id)}
                     >
                       Delete
