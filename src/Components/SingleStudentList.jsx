@@ -5,6 +5,7 @@ import {
   deleteAStudentThunk,
   fetchSingleStudent,
 } from "../Redux/students/students.actions";
+import "../CSS/SingleStudentList.css";
 
 function SingleStudentList(props) {
   const { student } = props;
@@ -80,13 +81,13 @@ function SingleStudentList(props) {
                 </div>
               </div>
               <button
-                className="button-edit"
+                className="edit-button"
                 onClick={() => handleEdit(student.id, 1)}
               >
                 Edit
               </button>
               <button
-                className="button-delete"
+                className="delete-button"
                 onClick={() => handleDelete(student.id, 1)}
               >
                 Delete

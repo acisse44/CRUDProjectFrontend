@@ -83,6 +83,7 @@ function AddNewCampus() {
               id="imageUrl"
               name="imageUrl"
               value={campusData.imageUrl}
+              placeholder="Enter Image URL"
               onChange={handleChange}
             />
           </label>
