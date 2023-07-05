@@ -112,6 +112,7 @@ function AddNewStudent() {
               className="input-field"
               type="text"
               name="imageUrl"
+              placeholder="Enter Image URL"
               value={studentData.imageUrl}
               onChange={handleChange}
             />
