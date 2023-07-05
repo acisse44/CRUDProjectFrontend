@@ -1,0 +1,55 @@
+.all-students-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.single-student-container {
+  display: flex;
+  border: 3px solid rgb(97, 97, 97);
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+  width: 300px;
+  box-sizing: border-box;
+  margin-left: 50px;
+  margin-bottom: 50px;
+}
+
+.student-image {
+  width: 250px;
+  height: 250px;
+  margin-top: 20px;
+  border: 3px solid rgb(97, 97, 97);
+
+}
+
+.edit-button,
+.delete-button {
+
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-weight: 800;
+  padding: 0.75rem 0.875rem;
+  line-height: 1rem;
+  min-height: 2.5rem;
+  border-radius: 6px;
+  font-size: 15px;
+  text-align: center;
+  width: 80px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.edit-button {
+  background: #00a2ff;
+  border: 1px solid #00a2ff;
+  margin-right: 10px;
+}
+.delete-button {
+  background: #FF4742;
+  border: 1px solid #FF4742;
+  margin-left: 10px;
+}
