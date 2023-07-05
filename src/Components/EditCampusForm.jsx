@@ -1,8 +1,11 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { editCampusThunk, fetchSingleCampusThunk } from '../Redux/campuses/campuses.actions';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  editCampusThunk,
+  fetchSingleCampusThunk,
+} from "../Redux/campuses/campuses.actions";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../CSS/EditAddForms.css";
 
 function EditCampusForm(props) {
@@ -11,10 +14,10 @@ function EditCampusForm(props) {
   const navigate = useNavigate();
   const campus = useSelector((state) => state.campuses.singleCampus);
   const [campusData, setCampusData] = useState({
-    name: '',
-    imageUrl: '',
-    description: '',
-    address: '',
+    name: "",
+    imageUrl: "",
+    description: "",
+    address: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -36,7 +39,7 @@ function EditCampusForm(props) {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setCampusData((prevState) => ({ ...prevState, [name]: value,}));
+    setCampusData((prevState) => ({ ...prevState, [name]: value }));
   };
 
   const handleSubmit = (event) => {
@@ -44,10 +47,10 @@ function EditCampusForm(props) {
     dispatch(editCampusThunk(campusId, campusData));
 
     setCampusData({
-      name: '',
-      imageUrl: '',
-      description: '',
-      address: '',
+      name: "",
+      imageUrl: "",
+      description: "",
+      address: "",
     });
     setSubmitted(true);
   };
@@ -59,10 +62,12 @@ function EditCampusForm(props) {
   if (submitted) {
     return (
       <div className="edit-form-message-container">
-      <h2>Edits Submitted Successfully!</h2>
-      <p>Campus details have been updated.</p>
-      <button className="button-submit" type="return" onClick={handleReturn}>Return</button>
-    </div>
+        <h2>Edits Submitted Successfully!</h2>
+        <p>Campus details have been updated.</p>
+        <button className="button-submit" type="return" onClick={handleReturn}>
+          Return
+        </button>
+      </div>
     );
   }
 
@@ -122,7 +127,9 @@ function EditCampusForm(props) {
             />
           </label>
         </div>
-        <button className="button-submit" type="submit">Submit</button>
+        <button className="button-submit" type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );

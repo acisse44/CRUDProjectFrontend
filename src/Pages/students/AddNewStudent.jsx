@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { addStudentThunk } from '../../Redux/students/students.actions';
-import "../../CSS/AddForm.css"
-import { fetchAllCampusesThunk } from '../../Redux/campuses/campuses.actions';
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { addStudentThunk } from "../../Redux/students/students.actions";
+import "../../CSS/AddForm.css";
+import { fetchAllCampusesThunk } from "../../Redux/campuses/campuses.actions";
 
 function AddNewStudent() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const allCampuses = useSelector((state) => state.campuses.allCampuses);
   const [studentData, setStudentData] = useState({
-    firstName: '',
-    lastName: '',
-    imageUrl: '',
-    email: '',
-    gpa: '',
-    campusId: '',
+    firstName: "",
+    lastName: "",
+    imageUrl: "",
+    email: "",
+    gpa: "",
+    campusId: "",
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -36,23 +36,23 @@ function AddNewStudent() {
       // Set a default image URL if it is empty/
       setStudentData((prevData) => ({
         ...prevData,
-       imageUrl:
-          'https://t4.ftcdn.net/jpg/02/51/95/53/360_F_251955356_FAQH0U1y1TZw3ZcdPGybwUkH90a3VAhb.jpg',
+        imageUrl:
+          "https://t4.ftcdn.net/jpg/02/51/95/53/360_F_251955356_FAQH0U1y1TZw3ZcdPGybwUkH90a3VAhb.jpg",
       }));
     }
 
     dispatch(addStudentThunk(studentData));
 
     setStudentData({
-      firstName: '',
-      lastName: '',
-      imageUrl: '',
-      email: '',
-      gpa: '',
-      campusId: '',
+      firstName: "",
+      lastName: "",
+      imageUrl: "",
+      email: "",
+      gpa: "",
+      campusId: "",
     });
     setSubmitted(true);
-    console.log(studentData)
+    console.log(studentData);
   };
 
   if (submitted) {
@@ -63,7 +63,7 @@ function AddNewStudent() {
   return (
     <div>
       <h1 className="form-title">Add A New Student</h1>
-      <form  className="form" onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <div className="input">
           <label htmlFor="firstName" className="input-label">
             First Name:
@@ -74,11 +74,14 @@ function AddNewStudent() {
               name="firstName"
               value={studentData.firstName}
               onChange={handleChange}
-              required 
-              placeholder='Enter Student First Name'
+              required
+              placeholder="Enter Student First Name"
               pattern="^[a-zA-Z\s]+$"
             />
-             <span id="firstError">Please enter a valid first name. Special characters or numbers are not allowed.</span>
+            <span id="firstError">
+              Please enter a valid first name. Special characters or numbers are
+              not allowed.
+            </span>
           </label>
         </div>
         <div className="input">
@@ -92,10 +95,13 @@ function AddNewStudent() {
               value={studentData.lastName}
               required
               onChange={handleChange}
-              placeholder='Enter Student Last Name'
+              placeholder="Enter Student Last Name"
               pattern="^[a-zA-Z\s]+$"
             />
-             <span id="lastError">Please enter a valid last name. Special characters or numbers are not allowed.</span>
+            <span id="lastError">
+              Please enter a valid last name. Special characters or numbers are
+              not allowed.
+            </span>
           </label>
         </div>
         <div className="input">
@@ -122,9 +128,9 @@ function AddNewStudent() {
               value={studentData.email}
               onChange={handleChange}
               required
-              placeholder='Enter Student Email'
+              placeholder="Enter Student Email"
             />
-             <span id="emailError">Please enter a valid email.</span>
+            <span id="emailError">Please enter a valid email.</span>
           </label>
         </div>
         <div className="input">
@@ -138,10 +144,13 @@ function AddNewStudent() {
               value={studentData.gpa}
               onChange={handleChange}
               required
-              placeholder='Enter Student GPA'
+              placeholder="Enter Student GPA"
               pattern="^(?:[0-4](?:\.\d{1,2})?|\.\d{1,2})$"
             />
-             <span id="gpaError">Please enter a valid GPA. The number should be from 0-4, optionally with up to two decimal places</span>
+            <span id="gpaError">
+              Please enter a valid GPA. The number should be from 0-4,
+              optionally with up to two decimal places
+            </span>
           </label>
         </div>
         <div className="input">
@@ -163,7 +172,9 @@ function AddNewStudent() {
             </select>
           </label>
         </div>
-        <button className="button-submit" type="submit">Submit</button>
+        <button className="button-submit" type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );
