@@ -17,7 +17,7 @@ function SingleStudentList(props) {
         </div>
       ) : (
         <div>
-          <div id="singleStudent" key={student.id}>
+          <div id="singleStudent" key={student.id} style={{ width: '800px', height: '325px' }}>
             <div>
               <img src={student.imageUrl} alt={student.firstName} id="singleStudentImage" style={{width: '350px', height: '250px'}}/>
             </div>
