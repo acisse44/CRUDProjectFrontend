@@ -5,6 +5,7 @@ import { fetchAllCampusesThunk, deleteACampusThunk } from '../Redux/campuses/cam
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { all } from 'axios';
+import "../CSS/EditAddForms.css";
 
 function EditStudentForm(props) {
   const studentId = props.studentId.id;

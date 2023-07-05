@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { editCampusThunk, fetchSingleCampusThunk } from '../Redux/campuses/campuses.actions';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import "../CSS/EditAddForms.css";
 
 function EditCampusForm(props) {
   const campusId = props.campusId.id;
