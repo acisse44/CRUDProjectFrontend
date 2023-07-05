@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import '../CSS/AllCampuses.css';
+import '../CSS/AllCampusesList.css';
+import "../CSS/EditAddForms.css";
+
 
 function CampusesList(props) {
   const { allCampuses, handleDelete } = props;
@@ -29,7 +31,7 @@ function CampusesList(props) {
                 <h2 className="campus-name">
                   <Link to={`/campuses/${campus.id}`} style={{ textDecoration: 'none' }}>{campus.name}</Link>
                 </h2>
-                <p className="campus-students">{studentsCount(campus)} students</p>
+                <p>{studentsCount(campus)} students</p>
               </div>
               <div className="buttons-container">
                 <button className="edit-button" onClick={() => handleEdit(campus.id)}>Edit</button>

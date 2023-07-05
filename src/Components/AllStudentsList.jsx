@@ -1,6 +1,8 @@
 import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import '../App/App.css';
+import '../CSS/AllStudentsList.css';
+import "../CSS/EditAddForms.css";
+
 
 function Students(props) {
   const { allStudents, allCampuses, handleDelete } = props;
@@ -25,18 +27,20 @@ function Students(props) {
           <div>No students</div>
         </div>
       ) : (
-        <div id="student-container">
+        <div className="all-students-container">
           {allStudents.map((student) => (
-            <div key={student.id} id="student">
-              <img src={student.imageUrl} alt={student.firstName} id="studentImage" />
-              <h1 id="student-name">
-              <Link to={`/students/${student.id}`}>{student.firstName} {student.lastName}</Link>
-              </h1>
-              <h1 id="student-campus">{getCampusName(student.campusId)}</h1>
-              <button className="button-edit button-size" onClick={() => handleEdit(student.id)}>Edit</button>
-              <button className="student-button-delete button-size" onClick={() => handleDelete(student.id)}>
-                Delete
-              </button>
+            <div key={student.id} className="single-student-container">
+              <img src={student.imageUrl} alt={student.firstName} className="student-image" />
+              <div className="student-details">
+                <h2 className="student-name">
+                  <Link to={`/students/${student.id}`}>{student.firstName} {student.lastName}</Link>
+                </h2>
+                <p>{getCampusName(student.campusId)}</p>
+              </div>
+              <div className="buttons-container">
+                <button className="edit-button" onClick={() => handleEdit(student.id)}>Edit</button>
+                <button className="delete-button" onClick={() => handleDelete(student.id)}>Delete</button>
+              </div>
             </div>
           ))}
         </div>
