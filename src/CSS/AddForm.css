@@ -39,8 +39,10 @@ input, button {
 }
 
 .input-field {
+    margin: 0 auto;
     width: 100%;
-	max-width: 20rem;
+    max-width: 20rem;
+    box-sizing: border-box;
 	box-sizing: border-box;
 	margin-top: .25rem;
 	border: 0.0625rem solid #999;
@@ -91,3 +93,33 @@ input, button {
     outline: 0;
     padding: .5rem .75rem;
   }
+
+#campusError, #descriptionError, #addressError, #firstError, #lastError, #emailError, #gpaError {
+    display: none;
+    font-family: 'nunito', 'roboto', 'proxima-nova', 'proxima nova', sans-serif;
+    color: red;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+#name:invalid:not(:placeholder-shown) ~ #campusError {
+    display: block;
+}
+#description:invalid:not(:placeholder-shown) ~ #descriptionError {
+    display: block;
+}
+#address:invalid:not(:placeholder-shown) ~ #addressError {
+    display: block;
+}
+#firstName:invalid:not(:placeholder-shown) ~ #firstError {
+    display: block;
+}
+#lastName:invalid:not(:placeholder-shown) ~ #lastError {
+    display: block;
+}
+#email:invalid:not(:placeholder-shown) ~ #emailError {
+    display: block;
+}
+#gpa:invalid:not(:placeholder-shown) ~ #gpaError {
+    display: block;
+}
