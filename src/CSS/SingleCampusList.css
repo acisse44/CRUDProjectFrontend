@@ -40,6 +40,12 @@
   margin-left: 90px;
 }
 
+.campus-description {
+  font-size: 20px;
+  margin-right: 80px;
+  margin-left: 90px;
+}
+
 .all-students-container {
   display: flex;
   flex-wrap: wrap;

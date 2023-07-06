@@ -42,6 +42,7 @@ function SingleCampusList(props) {
             <div>
               <h2 className="campus-name">{campus.name}</h2>
               <div className="campus-address">{campus.address}</div>
+              <div className="campus-description">{campus.description}</div>
             </div>
           </div>
 
