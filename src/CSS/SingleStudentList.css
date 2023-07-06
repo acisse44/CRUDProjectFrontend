@@ -26,3 +26,57 @@
   padding: 12px 14px;
   text-align: center;
 }
+
+#singleStudent {
+  width: 800px;
+  height: 325px;
+}
+
+#singleStudentImage {
+  width: 350px;
+  height: 280px;
+  margin-right: 10px;
+  margin-left: 0;
+  float: left;
+  border: 10px solid rgb(97, 97, 97);
+
+}
+
+#full-name {
+  font-size: 50px;
+  margin-right: 35px;
+  margin-top: 70px;
+  margin-left: 35px;
+  margin-bottom: 135px;
+  font-family: "Lucida Sans";
+}
+
+#student-email {
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-family: "Lucida Sans";
+
+}
+
+#student-GPA {
+  margin-bottom: 60px;
+  font-size: 30px;
+  font-family: "Lucida Sans";
+
+}
+
+#studentCampusImage {
+  width: 300px;
+  height: 250px;
+  margin-right: 10px;
+  margin-left: 0;
+  float: left;
+  border: 10px solid rgb(97, 97, 97);
+}
+
+#single-campus-heading {
+  margin-top: 100px;
+  margin-right: 600px;
+  font-size: 40px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
