@@ -40,34 +40,30 @@
   margin-left: 90px;
 }
 
-.student-container {
+.all-students-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   max-width: 100%;
-  justify-content: flex-start;
 }
 
-.student {
-  border: 3px solid;
-  width: calc(20% - 20px);
-  height: 400px;
-  margin: 10px;
-  box-sizing: border-box;
-  padding: 10px;
+.single-student-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  border: 3px solid rgb(97, 97, 97);
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+  width: 300px;
+  box-sizing: border-box;
+  margin-left: 50px;
+  margin-bottom: 50px;
 }
 
 .student-image {
-  width: 100px;
-  height: 200px;
-  float: center;
-}
-
-.student-name {
-  margin-top: -5px;
-  font-size: 30px;
+  width: 250px;
+  height: 250px;
+  margin-top: 20px;
+  border: 3px solid rgb(97, 97, 97);
 }
 
 .edit-button,
