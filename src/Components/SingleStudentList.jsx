@@ -41,12 +41,6 @@ function SingleStudentList(props) {
           <div>No student</div>
         </div>
       ) : (
-<<<<<<< HEAD
-          <div>
-            <div id="singleStudent" key={student.id}>
-                <div>
-                  <img src={student.imageUrl} alt={student.firstName} id="singleStudentImage" style={{width: '350px', height: '250px'}}/>
-=======
         <div>
           <div id="singleStudent" key={student.id} >
             <div>
@@ -73,7 +67,6 @@ function SingleStudentList(props) {
                 >
                   {" "}
                   GPA: {student.gpa}
->>>>>>> 05f9611 (fixed single student container)
                 </div>
               </div>
               <button
