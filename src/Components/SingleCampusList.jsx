@@ -10,6 +10,11 @@ function SingleCampusList(props) {
   const students = campus.students;
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const studentsCount = (campus) => {
+    return campus.students && campus.students.length > 0
+      ? campus.students.length
+      : 0;
+  };
 
   const handleDelete = (id) => {
     // Refreshes the page automatically after you delete
@@ -43,6 +48,9 @@ function SingleCampusList(props) {
               <h2 className="campus-name">{campus.name}</h2>
               <div className="campus-address">{campus.address}</div>
               <div className="campus-description">{campus.description}</div>
+              <div className="campus-student-count">
+                Number of students: {studentsCount(campus)}
+              </div>
               <div className="buttons-container">
                 <button
                   className="edit-button"
