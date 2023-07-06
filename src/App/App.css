@@ -2,52 +2,6 @@
   text-align: center;
 }
 
-#student-campus {
-  margin-top: -20px;
-  font-size: 20px;
-}
-
-#campus {
-  border: 3px solid;
-  width: 850px;
-  height: 300px;
-  margin: 10px;
-  box-sizing: border-box;
-  padding: 10px;
-}
-
-#singleStudent {
-  border: 3px solid;
-  width: 100%;
-  height: 500px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  margin-left: 10px;
-  box-sizing: border-box;
-  padding: 10px;
-}
-
-.studentCampus {
-  border: 3px solid;
-  width: 60%;
-  height: 200px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  margin-left: 10px;
-  box-sizing: border-box;
-  padding: 10px;
-}
-
-#studentCampusImage {
-  margin-right: 10px;
-  width: 150px;
-  height: 150px;
-}
-
 #addCampus {
   font-size: 50px;
   font-weight: bold;

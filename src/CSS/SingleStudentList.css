@@ -39,7 +39,6 @@
   margin-left: 0;
   float: left;
   border: 10px solid rgb(97, 97, 97);
-
 }
 
 #full-name {
@@ -55,14 +54,12 @@
   margin-bottom: 10px;
   font-size: 30px;
   font-family: "Lucida Sans";
-
 }
 
 #student-GPA {
   margin-bottom: 60px;
   font-size: 30px;
   font-family: "Lucida Sans";
-
 }
 
 #studentCampusImage {
@@ -78,5 +75,52 @@
   margin-top: 100px;
   margin-right: 600px;
   font-size: 40px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+#student-campus {
+  margin-top: -20px;
+  font-size: 20px;
+}
+
+#campus {
+  border: 3px solid;
+  width: 850px;
+  height: 300px;
+  margin: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+#singleStudent {
+  border: 3px solid;
+  width: 100%;
+  height: 500px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.studentCampus {
+  border: 3px solid;
+  width: 60%;
+  height: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+#studentCampusImage {
+  margin-right: 10px;
+  width: 150px;
+  height: 150px;
 }
