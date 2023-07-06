@@ -48,31 +48,33 @@ function SingleCampusList(props) {
           {students && students.length > 0 ? (
             <div>
               <h2>Students</h2>
-              <div className="student-container">
+              <div className="all-students-container">
                 {students.map((student) => (
-                  <div key={student.id} className="student">
+                  <div key={student.id} className="single-student-container">
                     <img
                       src={student.imageUrl}
                       alt={student.firstName}
                       className="student-image"
                     />
-                    <h1 className="student-name">
+                    <h1>
                       <Link to={`/students/${student.id}`}>
                         {student.firstName} {student.lastName}
                       </Link>
                     </h1>
-                    <button
-                      className="edit-button"
-                      onClick={() => handleEdit(student.id)}
-                    >
-                      Edit
-                    </button>
-                    <button
-                      className="delete-button"
-                      onClick={() => handleDelete(student.id)}
-                    >
-                      Delete
-                    </button>
+                    <div className="buttons-container">
+                      <button
+                        className="edit-button"
+                        onClick={() => handleEdit(student.id)}
+                      >
+                        Edit
+                      </button>
+                      <button
+                        className="delete-button"
+                        onClick={() => handleDelete(student.id)}
+                      >
+                        Delete
+                      </button>
+                    </div>
                   </div>
                 ))}
               </div>
