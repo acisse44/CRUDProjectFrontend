@@ -1,11 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
-import {
-  deleteAStudentThunk,
-  fetchSingleStudent,
-} from "../Redux/students/students.actions";
-import "../CSS/SingleStudentList.css";
+import { deleteAStudentThunk } from "../../Redux/students/students.actions";
+import "../../Css/students/SingleStudentList.css";
 
 function SingleStudentList(props) {
   const { student } = props;
@@ -28,20 +25,19 @@ function SingleStudentList(props) {
   };
 
   const handleDelete = (id) => {
-    dispatch(deleteAStudentThunk(id)).then(() =>
-      dispatch(fetchSingleStudent(student.id))
-    );
+    dispatch(deleteAStudentThunk(id)).then(() => navigate(`/students/`));
   };
 
   return (
     <div>
       {!student || !student.id ? (
         <div className="empty-list">
-          <div>Empty</div>
-          <div>No student</div>
+          <h2>404 Not Found</h2>
+          <div>Page Not Found</div>
         </div>
       ) : (
         <div>
+          <h1 className="header">Student Page</h1>
           <div id="singleStudent" key={student.id}>
             <div>
               <img

@@ -57,6 +57,7 @@ export const addStudentThunk = (studentData) => {
   return async (dispatch) => {
     try {
       console.log("addStudentThunk is firing");
+      console.log("studentDATA", studentData);
       const response = await axios.post(
         "http://localhost:8080/api/students",
         studentData

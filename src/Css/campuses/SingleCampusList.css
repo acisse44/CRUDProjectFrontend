@@ -1,11 +1,11 @@
-.campus-container {
+.single-student-campus-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.campus {
+.single-student-campus {
   border: 3px solid;
   width: 700px;
   height: 600px;
@@ -19,7 +19,7 @@
   padding: 10px;
 }
 
-.campus-image {
+.single-student-campus-image {
   width: 300px;
   height: 250px;
   margin-right: 10px;
@@ -28,32 +28,32 @@
   border: 10px solid rgb(97, 97, 97);
 }
 
-.campus-name {
+.single-student-campus-name {
   font-size: 40px;
   margin-top: -5px;
   margin-left: 4px;
 }
 
-.campus-address {
+.single-student-campus-address {
   font-size: 20px;
   margin-right: 80px;
   margin-left: 90px;
 }
 
-.campus-description {
+.single-student-campus-description {
   font-size: 20px;
   margin-right: 80px;
   margin-left: 90px;
 }
 
-.all-students-container {
+.single-student-all-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   max-width: 100%;
 }
 
-.single-student-container {
+.single-student-single-container {
   display: flex;
   border: 3px solid rgb(97, 97, 97);
   flex-wrap: wrap;
@@ -65,15 +65,15 @@
   margin-bottom: 50px;
 }
 
-.student-image {
+.single-student-student-image {
   width: 250px;
   height: 250px;
   margin-top: 20px;
   border: 3px solid rgb(97, 97, 97);
 }
 
-.edit-button,
-.delete-button {
+.single-student-edit-button,
+.single-student-delete-button {
   color: #ffffff;
   cursor: pointer;
   font-family: sans-serif;
@@ -89,13 +89,17 @@
   margin-top: 10px;
 }
 
-.edit-button {
+.single-student-edit-button {
   background: #00a2ff;
   border: 1px solid #00a2ff;
   margin-right: 10px;
 }
-.delete-button {
+.single-student-delete-button {
   background: #ff4742;
   border: 1px solid #ff4742;
   margin-left: -9px;
+}
+
+.single-student-header {
+  font-size: 60px;
 }
