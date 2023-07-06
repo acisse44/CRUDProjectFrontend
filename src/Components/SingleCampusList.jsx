@@ -43,6 +43,20 @@ function SingleCampusList(props) {
               <h2 className="campus-name">{campus.name}</h2>
               <div className="campus-address">{campus.address}</div>
               <div className="campus-description">{campus.description}</div>
+              <div className="buttons-container">
+                <button
+                  className="edit-button"
+                  onClick={() => handleEdit(campus.id)}
+                >
+                  Edit
+                </button>
+                <button
+                  className="delete-button"
+                  onClick={() => handleDelete(campus.id)}
+                >
+                  Delete
+                </button>
+              </div>
             </div>
           </div>
 
