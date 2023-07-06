@@ -42,7 +42,7 @@ function SingleStudentList(props) {
         </div>
       ) : (
         <div>
-          <div id="singleStudent" key={student.id} >
+          <div id="singleStudent" key={student.id}>
             <div>
               <img
                 src={student.imageUrl}
@@ -51,23 +51,12 @@ function SingleStudentList(props) {
               />
             </div>
             <div>
-              <h2
-                id="full-name"
-              >
+              <h2 id="full-name">
                 {student.firstName} {student.lastName}
               </h2>
               <div>
-                <div
-                  id="student-email"
-                >
-                  Email: {student.email}
-                </div>
-                <div
-                  id="student-GPA"
-                >
-                  {" "}
-                  GPA: {student.gpa}
-                </div>
+                <div id="student-email">Email: {student.email}</div>
+                <div id="student-GPA"> GPA: {student.gpa}</div>
               </div>
               <button
                 className="edit-button"
@@ -83,7 +72,11 @@ function SingleStudentList(props) {
               </button>
             </div>
           </div>
-          {campus ? <h2 id= "single-campus-heading">Campus</h2> : <div>No campus</div>}
+          {campus ? (
+            <h2 id="single-campus-heading">Campus</h2>
+          ) : (
+            <div>No campus</div>
+          )}
           {campus && (
             <div key={campus.id} id="campus">
               {campus.imageUrl && (
