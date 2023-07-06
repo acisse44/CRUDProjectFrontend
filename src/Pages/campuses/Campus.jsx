@@ -20,7 +20,7 @@ function Campus() {
 
   return (
     <div>
-      <h1>Campus</h1>
+      <h1 className= "campusHeading">Campus</h1>
       <div id="singleCampusList">
         <SingleCampusList campus={campus} />
       </div>
