@@ -83,9 +83,7 @@ function SingleStudentList(props) {
               </button>
             </div>
           </div>
-
           {campus ? <h2 id= "single-campus-heading">Campus</h2> : <div>No campus</div>}
-
           {campus && (
             <div key={campus.id} id="campus">
               {campus.imageUrl && (

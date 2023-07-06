@@ -47,7 +47,7 @@ function SingleCampusList(props) {
 
           {students && students.length > 0 ? (
             <div>
-              <h2>Students</h2> 
+              <h2>Students</h2>
               <div className="student-container">
                 {students.map((student) => (
                   <div key={student.id} className="student">
