@@ -7,7 +7,7 @@
 
 .campus {
   border: 3px solid;
-  width: 90vh;
+  width: 1000px;
   height: 300px;
   max-width: 100%;
   margin-top: 10px;
@@ -20,25 +20,32 @@
 }
 
 .campus-image {
+  width: 400px;
+  height: 250px;
   margin-right: 10px;
-  width: 200px;
-  height: 100px;
+  margin-left: 0;
+  float: left;
+  border: 10px solid rgb(97, 97, 97);
 }
 
 .campus-name {
   font-size: 40px;
   margin-top: -5px;
+  margin-left: 4px;
 }
 
 .campus-address {
   font-size: 20px;
-  margin-right: 100px;
+  margin-right: 80px;
+  margin-left: 90px;
 }
 
 .student-container {
   display: flex;
   flex-wrap: wrap;
   max-width: 100%;
+  justify-content: flex-start;
+
 }
 
 .student {
@@ -48,12 +55,16 @@
   margin: 10px;
   box-sizing: border-box;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.studentImage {
+.student-image {
   width: 150px;
   height: 200px;
   float: center;
+
 }
 
 .student-name {
@@ -86,5 +97,5 @@
 .delete-button {
   background: #ff4742;
   border: 1px solid #ff4742;
-  margin-left: 10px;
+  margin-left: -9px;
 }

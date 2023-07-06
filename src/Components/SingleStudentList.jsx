@@ -48,39 +48,28 @@ function SingleStudentList(props) {
                   <img src={student.imageUrl} alt={student.firstName} id="singleStudentImage" style={{width: '350px', height: '250px'}}/>
 =======
         <div>
-          <div id="singleStudent" key={student.id} style={{ width: '800px', height: '325px' }}>
+          <div id="singleStudent" key={student.id} >
             <div>
               <img
                 src={student.imageUrl}
                 alt={student.firstName}
                 id="singleStudentImage"
-                style={{ width: "350px", height: "250px" }}
               />
             </div>
             <div>
               <h2
-                id="first-name"
-                style={{
-                  fontSize: "50px",
-                  marginRight: "35px",
-                  marginTop: "50px",
-                  marginLeft: "35px",
-                  marginBottom: "135px",
-                  fontFamily: "Lucida Sans",
-                }}
+                id="full-name"
               >
                 {student.firstName} {student.lastName}
               </h2>
               <div>
                 <div
                   id="student-email"
-                  style={{ marginBottom: "10px", fontSize: "25px" }}
                 >
                   Email: {student.email}
                 </div>
                 <div
                   id="student-GPA"
-                  style={{ marginBottom: "60px", fontSize: "25px" }}
                 >
                   {" "}
                   GPA: {student.gpa}
@@ -102,7 +91,7 @@ function SingleStudentList(props) {
             </div>
           </div>
 
-          {campus ? <h2>Campus</h2> : <div>No campus</div>}
+          {campus ? <h2 id= "single-campus-heading">Campus</h2> : <div>No campus</div>}
 
           {campus && (
             <div key={campus.id} id="campus">

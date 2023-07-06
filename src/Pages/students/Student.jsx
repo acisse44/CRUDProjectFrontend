@@ -19,7 +19,7 @@ import { useParams } from 'react-router-dom';
 
   return (
     <div>
-      <h1 style = {{fontSize: '55px'}}>Student</h1> 
+<h1 id="student-Heading" style={{ fontSize: '55px', fontFamily: 'Lucida Sans, Lucida Sans Regular, Lucida Grande, Lucida Sans Unicode, Geneva, Verdana, sans-serif' }}>Student</h1>
       <button>Edit</button>
         <div id="singleStudentList">
           <SingleStudentList student={singleStudent} />
