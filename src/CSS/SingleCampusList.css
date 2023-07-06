@@ -7,23 +7,23 @@
 
 .campus {
   border: 3px solid;
-  width: 1000px;
-  height: 300px;
+  width: 700px;
+  height: 600px;
   max-width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
   display: flex;
   align-items: center;
-  margin-left: 10px;
+  margin-left: 40px;
   box-sizing: border-box;
   padding: 10px;
 }
 
 .campus-image {
-  width: 400px;
+  width: 300px;
   height: 250px;
   margin-right: 10px;
-  margin-left: 0;
+  margin-left: 10px;
   float: left;
   border: 10px solid rgb(97, 97, 97);
 }
@@ -35,6 +35,12 @@
 }
 
 .campus-address {
+  font-size: 20px;
+  margin-right: 80px;
+  margin-left: 90px;
+}
+
+.campus-description {
   font-size: 20px;
   margin-right: 80px;
   margin-left: 90px;
