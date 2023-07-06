@@ -4,12 +4,13 @@
   align-items: center;
   justify-content: center;
   background-image: url("https://www.wallpaperup.com/uploads/wallpapers/2016/05/07/945361/5f8b3c8765aacdbbf2bf6ab98eb62d16.jpg");
+  background-size: cover;
 }
 
 .campus {
   border: 3px solid;
-  width: 700px;
-  height: 600px;
+  width: 800px;
+  height: 300px;
   max-width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -30,8 +31,8 @@
 }
 
 .campus-image {
-  width: 300px;
-  height: 250px;
+  width: 370px;
+  height: 270px;
   margin-right: 10px;
   margin-left: 10px;
   float: left;
