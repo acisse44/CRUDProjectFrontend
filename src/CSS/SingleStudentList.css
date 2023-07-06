@@ -27,18 +27,13 @@
   text-align: center;
 }
 
-#singleStudent {
-  width: 800px;
-  height: 325px;
-}
-
 #singleStudentImage {
   width: 350px;
   height: 280px;
   margin-right: 10px;
   margin-left: 0;
   float: left;
-  border: 10px solid rgb(97, 97, 97);
+  border: 5px solid rgb(97, 97, 97);
 }
 
 #full-name {
@@ -46,7 +41,7 @@
   margin-right: 35px;
   margin-top: 70px;
   margin-left: 35px;
-  margin-bottom: 135px;
+  margin-bottom: 35px;
   font-family: "Lucida Sans";
 }
 
@@ -63,18 +58,17 @@
 }
 
 #studentCampusImage {
-  width: 300px;
-  height: 250px;
-  margin-right: 10px;
-  margin-left: 0;
-  float: left;
-  border: 10px solid rgb(97, 97, 97);
+  display: center;
+  width: 80%;
+  margin-top: 20px;
+  border: 3px solid rgb(97, 97, 97);
 }
 
 #single-campus-heading {
+  display: center;
   margin-top: 100px;
-  margin-right: 600px;
-  font-size: 40px;
+  margin-right: 40px;
+  font-size: 50px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
@@ -85,17 +79,21 @@
 }
 
 #campus {
-  border: 3px solid;
-  width: 850px;
-  height: 300px;
-  margin: 10px;
+  display: flex;
+  border: 3px solid rgb(97, 97, 97);
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+  width: 300px;
+  height: 500px;
   box-sizing: border-box;
-  padding: 10px;
+  margin-left: 50px;
+  margin-bottom: 50px;
 }
 
 #singleStudent {
   border: 3px solid;
-  width: 100%;
+  width: 800px;
   height: 500px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -117,10 +115,4 @@
   margin-left: 10px;
   box-sizing: border-box;
   padding: 10px;
-}
-
-#studentCampusImage {
-  margin-right: 10px;
-  width: 150px;
-  height: 150px;
 }
