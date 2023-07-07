@@ -52,7 +52,7 @@ function AddNewCampus() {
 
   return (
     <div className="container">
-      <h1 className="form-title">Add A New Campus</h1>
+      <h1 className="form-title">Add New Campus</h1>
       <form className="form" onSubmit={handleSubmit}>
         <div className="input">
           <label className="input-label" htmlFor="name">
