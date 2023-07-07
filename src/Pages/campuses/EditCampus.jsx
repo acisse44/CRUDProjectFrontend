@@ -1,5 +1,5 @@
 import React from "react";
-import EditCampusForm from "../../Components/EditCampusForm";
+import EditCampusForm from "../../Components/campuses/EditCampusForm";
 import { useParams } from "react-router-dom";
 
 function EditCampus() {

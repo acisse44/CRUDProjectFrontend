@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { addCampusThunk } from "../../Redux/campuses/campuses.actions";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../../CSS/AddForm.css";
+import "../../Css/forms/AddForm.css";
 
 function AddNewCampus() {
   const dispatch = useDispatch();

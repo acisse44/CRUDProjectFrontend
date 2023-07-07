@@ -1,51 +1,28 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import {
-  fetchAllStudentsThunk,
-  deleteAStudentThunk,
-} from "../../Redux/students/students.actions";
-import StudentsList from "../../Components/AllStudentsList";
+import { fetchAllStudentsThunk } from "../../Redux/students/students.actions";
 import { fetchAllCampusesThunk } from "../../Redux/campuses/campuses.actions";
+import StudentsList from "../../Components/students/AllStudentsList";
+import "../../Css/students/StudentsPage.css";
 
 function Students() {
   const allStudents = useSelector((state) => state.students.allStudents);
   const allCampuses = useSelector((state) => state.campuses.allCampuses);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const fetchAllStudents = () => {
     dispatch(fetchAllStudentsThunk());
     dispatch(fetchAllCampusesThunk());
   };
 
-  const handleDelete = (id) => {
-    dispatch(deleteAStudentThunk(id));
-  };
-
-  const handleAddStudent = () => {
-    navigate("/students/add");
-  };
-
   useEffect(() => {
     fetchAllStudents();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
-      <h1 style={{ fontSize: "60px" }} className="title">
-        {" "}
-        All Students
-      </h1>
-      <button className="button-add" onClick={handleAddStudent}>
-        Add Student
-      </button>
-      <div id="studentsList">
-        <StudentsList
-          allStudents={allStudents}
-          allCampuses={allCampuses}
-          handleDelete={handleDelete}
-        />
+      <div className="studentsHeading">
+        <StudentsList allStudents={allStudents} allCampuses={allCampuses} />
       </div>
     </div>
   );

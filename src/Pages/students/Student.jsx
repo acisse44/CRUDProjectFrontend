@@ -1,10 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  fetchSingleStudentThunk,
-  deleteAStudentThunk,
-} from "../../Redux/students/students.actions";
-import SingleStudentList from "../../Components/SingleStudentList";
+import { fetchSingleStudentThunk } from "../../Redux/students/students.actions";
+import SingleStudentList from "../../Components/students/SingleStudentList";
 import { useParams } from "react-router-dom";
 
 function Student() {
@@ -22,16 +19,6 @@ function Student() {
 
   return (
     <div>
-      <h1
-        id="student-Heading"
-        style={{
-          fontSize: "55px",
-          fontFamily:
-            "Lucida Sans, Lucida Sans Regular, Lucida Grande, Lucida Sans Unicode, Geneva, Verdana, sans-serif",
-        }}
-      >
-        Student
-      </h1>
       <div id="singleStudentList">
         <SingleStudentList student={singleStudent} />
       </div>

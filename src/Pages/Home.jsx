@@ -1,6 +1,5 @@
 import React from "react";
-import "../CSS/Homepage.css";
-
+import "../Css/pages/HomePage.css";
 function Home() {
   return <div className="homeHeading"></div>;
 }

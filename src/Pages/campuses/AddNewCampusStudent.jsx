@@ -1,27 +1,26 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
 import { addStudentThunk } from "../../Redux/students/students.actions";
-import { fetchAllCampusesThunk } from "../../Redux/campuses/campuses.actions";
+import { fetchSingleCampusThunk } from "../../Redux/campuses/campuses.actions";
 import "../../Css/forms/AddForm.css";
 
-function AddNewStudent() {
+function AddNewCampusStudent() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const allCampuses = useSelector((state) => state.campuses.allCampuses);
+  const campus = useParams();
   const [studentData, setStudentData] = useState({
     firstName: "",
     lastName: "",
     imageUrl: "",
     email: "",
     gpa: "",
-    campusId: "",
+    campusId: campus.id,
   });
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    dispatch(fetchAllCampusesThunk());
-    dispatch(fetchAllCampusesThunk());
+    dispatch(fetchSingleCampusThunk(campus.id));
   }, [studentData, dispatch]);
 
   const handleChange = (event) => {
@@ -32,15 +31,6 @@ function AddNewStudent() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (!studentData.imageUrl) {
-      // Set a default image URL if it is empty/
-      setStudentData((prevData) => ({
-        ...prevData,
-        imageUrl:
-          "https://t4.ftcdn.net/jpg/02/51/95/53/360_F_251955356_FAQH0U1y1TZw3ZcdPGybwUkH90a3VAhb.jpg",
-      }));
-    }
-
     dispatch(addStudentThunk(studentData));
 
     setStudentData({
@@ -49,14 +39,14 @@ function AddNewStudent() {
       imageUrl: "",
       email: "",
       gpa: "",
-      campusId: "",
+      campusId: campus.id,
     });
     setSubmitted(true);
     console.log(studentData);
   };
 
   if (submitted) {
-    navigate("/students");
+    navigate(`/campuses/${campus.id}`);
     return null;
   }
 
@@ -154,25 +144,6 @@ function AddNewStudent() {
             </span>
           </label>
         </div>
-        <div className="input">
-          <label htmlFor="campusId" className="input-selectlabel">
-            Campus:
-            <select
-              id="campusId"
-              className="input-select"
-              name="campusId"
-              value={studentData.campusId}
-              onChange={handleChange}
-            >
-              <option value="">Select a campus</option>
-              {allCampuses.map((campus) => (
-                <option key={campus.id} value={campus.id}>
-                  {campus.name}
-                </option>
-              ))}
-            </select>
-          </label>
-        </div>
         <button className="button-submit" type="submit">
           Submit
         </button>
@@ -181,4 +152,4 @@ function AddNewStudent() {
   );
 }
 
-export default AddNewStudent;
+export default AddNewCampusStudent;

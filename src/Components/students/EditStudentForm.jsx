@@ -3,14 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   fetchSingleStudentThunk,
   editStudentThunk,
-} from "../Redux/students/students.actions";
-import {
-  fetchAllCampusesThunk,
-  deleteACampusThunk,
-} from "../Redux/campuses/campuses.actions";
+} from "../../Redux/students/students.actions";
+import { fetchAllCampusesThunk } from "../../Redux/campuses/campuses.actions";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../CSS/EditAddForms.css";
+import "../../Css/forms/EditAddForms.css";
 
 function EditStudentForm(props) {
   const studentId = props.studentId.id;
