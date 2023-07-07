@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/CRUDProjectFrontend/static/css/main.6ece1a16.css",
+    "main.js": "/CRUDProjectFrontend/static/js/main.7a22b8ae.js",
+    "static/js/787.2f4fe1b7.chunk.js": "/CRUDProjectFrontend/static/js/787.2f4fe1b7.chunk.js",
+    "index.html": "/CRUDProjectFrontend/index.html",
+    "main.6ece1a16.css.map": "/CRUDProjectFrontend/static/css/main.6ece1a16.css.map",
+    "main.7a22b8ae.js.map": "/CRUDProjectFrontend/static/js/main.7a22b8ae.js.map",
+    "787.2f4fe1b7.chunk.js.map": "/CRUDProjectFrontend/static/js/787.2f4fe1b7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6ece1a16.css",
+    "static/js/main.7a22b8ae.js"
+  ]
+}
