@@ -1,4 +1,4 @@
-## <p align="center">[Design Paper](https://tinyurl.com/2bzexf57)</p>
+## <p align="center">[Design Workflow](https://tinyurl.com/2bzexf57)</p>
 
 
 # Getting Started with Create React App
