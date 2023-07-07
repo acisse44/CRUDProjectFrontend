@@ -61,7 +61,7 @@ function AddNewStudent() {
   }
 
   return (
-    <div>
+    <div className = "container">
       <h1 className="form-title">Add A New Student</h1>
       <form className="form" onSubmit={handleSubmit}>
         <div className="input">
