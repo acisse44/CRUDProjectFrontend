@@ -50,37 +50,39 @@ function SingleCampusList(props) {
           <div>Page Not Found</div>
         </div>
       ) : (
-        <div>
-          <h1 className="single-student-header">Campus Page</h1>
-          <div className="single-student-campus-container">
-            <div className="single-student-campus" key={campus.id}>
+        <div className="single-campus-heading">
+          <div className="single-campus-header-container">
+            <h1 className="single-campus-header">Campus Page</h1>
+          </div>
+          <div className="single-campus-all-container">
+            <div className="single-campus-single-container" key={campus.id}>
               <div>
                 <img
                   src={campus.imageUrl}
                   alt={campus.Name}
-                  className="single-student-campus-image"
+                  className="single-campus-campus-image"
                 />
               </div>
               <div>
-                <h2 className="single-student-campus-name">{campus.name}</h2>
-                <div className="single-student-campus-address">
+                <h2 className="single-campus-campus-name">{campus.name}</h2>
+                <div className="single-campus-campus-address">
                   {campus.address}
                 </div>
-                <div className="single-student-campus-description">
+                <div className="single-campus-campus-description">
                   {campus.description}
                 </div>
-                <div className="single-student-campus-student-count">
+                <div className="single-campus-student-count">
                   Number of students: {studentsCount(campus)}
                 </div>
-                <div className="single-student-buttons-container">
+                <div className="single-campus-buttons-container">
                   <button
-                    className="single-student-edit-button"
+                    className="single-campus-edit-button"
                     onClick={() => handleCampusEdit(campus.id)}
                   >
                     Edit
                   </button>
                   <button
-                    className="single-student-delete-button"
+                    className="single-campus-delete-button"
                     onClick={() => handleCampusDelete(campus.id)}
                   >
                     Delete
@@ -92,7 +94,7 @@ function SingleCampusList(props) {
 
           <div>
             <button
-              className="single-student-add-button"
+              className="single-campus-add-button"
               onClick={handleAddStudent}
             >
               Add Student
@@ -101,29 +103,39 @@ function SingleCampusList(props) {
 
           {students && students.length > 0 ? (
             <div>
-              <h2>Students</h2>
-              <div className="single-student-all-container">
+              <div className="single-campus-students-header-container">
+                <h2 className="single-campus-students-header">Students</h2>
+              </div>
+              <div className="single-campus-students-container">
                 {students.map((student) => (
-                  <div key={student.id} className="single-student-container">
+                  <div
+                    key={student.id}
+                    className="single-campus-student-container"
+                  >
                     <img
                       src={student.imageUrl}
                       alt={student.firstName}
-                      className="single-student-student-image"
+                      className="single-campus-student-image"
                     />
-                    <h1>
-                      <Link to={`/students/${student.id}`}>
-                        {student.firstName} {student.lastName}
-                      </Link>
-                    </h1>
-                    <div className="single-student-buttons-container">
+                    <div className="single-campus-student-name">
+                      <p>
+                        <Link
+                          to={`/students/${student.id}`}
+                          className="single-campus-student-link-hover"
+                        >
+                          {student.firstName} {student.lastName}
+                        </Link>
+                      </p>
+                    </div>
+                    <div className="single-campus-buttons-container">
                       <button
-                        className="single-student-edit-button"
+                        className="single-campus-student-edit-button"
                         onClick={() => handleStudentEdit(student.id)}
                       >
                         Edit
                       </button>
                       <button
-                        className="single-student-delete-button"
+                        className="single-campus-student-delete-button"
                         onClick={() => handleStudentDelete(student.id)}
                       >
                         Delete

@@ -36,56 +36,80 @@ function SingleStudentList(props) {
           <div>Page Not Found</div>
         </div>
       ) : (
-        <div>
-          <h1 className="header">Student Page</h1>
-          <div id="singleStudent" key={student.id}>
-            <div>
+        <div className="single-student-heading">
+          <div className="single-student-header-container">
+            <h1 className="single-student-header">Student Page</h1>
+          </div>
+          <div className="single-student-all-container" key={student.id}>
+            <div className="single-student-single-container">
               <img
                 src={student.imageUrl}
                 alt={student.firstName}
-                id="singleStudentImage"
+                className="single-student-student-image"
               />
-            </div>
-            <div>
-              <h2 id="full-name">
-                {student.firstName} {student.lastName}
-              </h2>
               <div>
-                <div id="student-email">Email: {student.email}</div>
-                <div id="student-GPA"> GPA: {student.gpa}</div>
+                <p className="single-student-student-name">
+                  {student.firstName} {student.lastName}
+                </p>
+                <div className="single-student-email-address">
+                  Email: {student.email}
+                </div>
+                <div className="single-student-student-gpa">
+                  {" "}
+                  GPA: {student.gpa}
+                </div>
+                <div className="single-student-buttons-container">
+                  <button
+                    className="single-student-edit-button"
+                    onClick={() => handleEdit(student.id, 1)}
+                  >
+                    Edit
+                  </button>
+                  <button
+                    className="single-student-delete-button"
+                    onClick={() => handleDelete(student.id, 1)}
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
-              <button
-                className="edit-button"
-                onClick={() => handleEdit(student.id, 1)}
-              >
-                Edit
-              </button>
-              <button
-                className="delete-button"
-                onClick={() => handleDelete(student.id, 1)}
-              >
-                Delete
-              </button>
             </div>
           </div>
           {campus ? (
-            <h2 id="single-campus-heading">Campus</h2>
+            <div className="single-student-campus-header-container">
+              <h2 className="single-student-campus-header">Campus</h2>
+            </div>
           ) : (
             <div>No campus</div>
           )}
           {campus && (
-            <div key={campus.id} id="campus">
-              {campus.imageUrl && (
-                <img
-                  src={campus.imageUrl}
-                  alt={campus.name}
-                  id="studentCampusImage"
-                />
-              )}
-              <h1 id="campus-name">
-                <Link to={`/campuses/${campus.id}`}>{campus.name}</Link>
-              </h1>
-              {/* <p id="campus-students">{studentsCount(campus)} students</p> */}
+            <div className="single-student-campus-all-container">
+              <div key={campus.id} className="single-student-campus-container">
+                {campus.imageUrl && (
+                  <img
+                    src={campus.imageUrl}
+                    alt={campus.name}
+                    className="single-student-campus-image"
+                  />
+                )}
+                <div className="single-student-campus-details">
+                  <div className="single-student-campus-name">
+                    <p>
+                      <Link
+                        to={`/campuses/${campus.id}`}
+                        className="single-student-campus-link-hover"
+                      >
+                        {campus.name}
+                      </Link>
+                    </p>
+                  </div>
+                  <div>
+                    <p className="single-student-campus-address">
+                      {campus.address}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           )}
         </div>

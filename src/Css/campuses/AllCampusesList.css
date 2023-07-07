@@ -40,9 +40,9 @@
   font-size: 15px;
   text-align: center;
   width: 80px;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  border-radius: 20px;
+  margin-bottom: 20px;
+  margin-top: 0px;
+  border-radius: 15px;
   transition: background-color 0.3s;
 }
 
@@ -59,12 +59,11 @@
 
 .campuses-edit-button:hover,
 .campuses-delete-button:hover {
-  background: #16b810;
   border: 1px solid #0c0c0c;
   color: #ffffff;
   font-weight: 900;
-  font-family: roboto;
   font-size: 17px;
+  text-align: center;
 }
 
 .campuses-add-button {
@@ -85,30 +84,33 @@
   outline: 0;
   padding: 12px 14px;
   text-align: center;
+  transition: box-shadow 0.3s;
+  border-radius: 15px;
 }
 
 .campuses-edit-button:hover {
-  background: #ff6600;
+  background: #0066ff;
   border: 1px solid #0c0c0c;
   color: #ffffff;
   font-weight: 900;
-  font-size: 17px;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 4px 8px;
 }
 
 .campuses-delete-button:hover {
-  background: #df00fc;
+  background: #ff0000;
   border: 1px solid #0c0c0c;
   color: #ffffff;
   font-weight: 900;
-  font-size: 17px;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 4px 8px;
 }
 
 .campuses-add-button:hover {
-  background: #fbff00;
-  border: 1px solid #0c0c0c;
+  border: 1px solid #0c0c0c98;
   color: #ffffff;
   font-weight: 900;
-  color: #ff4742;
+  color: #fffdfc;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 4px 8px;
+  background: #04d804;
 }
 
 .empty-campuses {
@@ -126,6 +128,7 @@
   text-align: center;
   color: #fff;
   font-size: 60px;
+  border-radius: 15px;
 }
 
 .campusesHeader-container {
@@ -140,11 +143,14 @@
 
 .campuses-name {
   font-size: 30px;
+  margin-top: -10px;
+  transition: background-color 0.3s;
 }
 
 .campuses-students-count {
   font-size: 15px;
   color: #fbff00;
+  margin-top: -15px;
 }
 
 .campuses-link-hover {
@@ -154,6 +160,8 @@
 }
 
 .campuses-link-hover:hover {
-  color: #0099ff;
+  color: #00ff0d;
   text-decoration: none;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 4px 8px;
 }
